@@ -19,13 +19,13 @@ namespace CustomControls
         [DllImport("DwmApi")] //System.Runtime.InteropServices
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
 
-        public bool darkTheme = false;
+        public bool darkTheme;
 
         private static bool IsDarkTheme()
         {
             using var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
             var registryValueObject = key?.GetValue("AppsUseLightTheme");
-            
+
             if (registryValueObject == null) return false;
             return (int)registryValueObject <= 0;
         }
@@ -39,8 +39,12 @@ namespace CustomControls
             if (setDPI)
                 ControlHelper.Resize(this);
 
-            DwmSetWindowAttribute(this.Handle, 20, new[] { darkTheme ? 1 : 0 }, 4);
-            ControlHelper.Adjust(this, darkTheme, changed);
+            if (changed)
+            {
+                DwmSetWindowAttribute(this.Handle, 20, new[] { darkTheme ? 1 : 0 }, 4);
+                ControlHelper.Adjust(this, darkTheme, changed);
+            }
+
         }
 
     }
@@ -235,13 +239,18 @@ namespace CustomControls
     {
         //Fields
         private int borderSize = 5;
+
         private int borderRadius = 5;
-        
-        private bool activated = false;
-        private bool secondary = false;
+        public int BorderRadius
+        {
+            get { return borderRadius; }
+            set
+            {
+                borderRadius = value;
+            }
+        }
 
         private Color borderColor = Color.Transparent;
-
         public Color BorderColor
         {
             get { return borderColor; }
@@ -252,6 +261,7 @@ namespace CustomControls
         }
 
 
+        private bool activated = false;
         public bool Activated
         {
             get { return activated; }
@@ -264,6 +274,7 @@ namespace CustomControls
             }
         }
 
+        private bool secondary = false;
         public bool Secondary
         {
             get { return secondary; }
