@@ -123,12 +123,12 @@ namespace GHelper
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Max refresh rate + screen overdrive for lower latency";
+            labelTipScreen.Text = "Maksimum Ekran Yenileme Hızı";
         }
 
         private void Button60Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "60Hz refresh rate to save battery";
+            labelTipScreen.Text = "Batarya Tasarrufu için 60Hz Ekran Yenileme Hızı";
         }
 
         private void ButtonScreen_MouseLeave(object? sender, EventArgs e)
@@ -138,27 +138,27 @@ namespace GHelper
 
         private void ButtonScreenAuto_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Sets 60Hz to save battery, and back when plugged";
+            labelTipScreen.Text = "Otomatik Ekran Yenileme Hızı (Pilde ve Şarjda)";
         }
 
         private void ButtonUltimate_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Routes laptop screen to dGPU, maximizing FPS";
+            labelTipGPU.Text = "En yüksek performans için sadece dGPU kullanılır";
         }
 
         private void ButtonStandard_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Enables dGPU for standard use";
+            labelTipGPU.Text = "Normal kullanım için dGPU ve iGPU kullanılır";
         }
 
         private void ButtonEco_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Disables dGPU for battery savings";
+            labelTipGPU.Text = "Batarya tasarrufu için sadece iGPU kullanılır";
         }
 
         private void ButtonOptimized_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Switch to Eco on battery and to Standard when plugged";
+            labelTipGPU.Text = "Otomatik GPU modu (Pilde ve Şarjda)";
         }
 
         private void ButtonGPU_MouseLeave(object? sender, EventArgs e)
@@ -674,7 +674,7 @@ namespace GHelper
             ButtonEnabled(buttonMiniled, screenEnabled);
 
             labelSreen.Text = screenEnabled
-                ? "Laptop Screen: " + frequency + "Hz" + ((overdrive == 1) ? " + Overdrive" : "")
+                ? "Laptop Ekranı: " + frequency + "Hz" + ((overdrive == 1) ? " + Overdrive" : "")
                 : "Laptop Screen: Turned off";
 
             button60Hz.Activated = false;
@@ -1057,7 +1057,7 @@ namespace GHelper
             ButtonEnabled(buttonStandard, false);
             ButtonEnabled(buttonUltimate, false);
 
-            labelGPU.Text = "GPU Mode: Changing ...";
+            labelGPU.Text = "GPU Modu: Değiştiriliyor ...";
 
             new Thread(() =>
             {
@@ -1102,7 +1102,7 @@ namespace GHelper
 
             if (CurrentGPU == ASUSWmi.GPUModeUltimate)
             {
-                DialogResult dialogResult = MessageBox.Show("Switching off Ultimate Mode requires restart", "Reboot now?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Ultimate Mod'u kapatmak yeniden başlatma gerektirir", "Şimdi yeniden başlat?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     Program.wmi.DeviceSet(ASUSWmi.GPUMux, 1);
@@ -1112,7 +1112,7 @@ namespace GHelper
             }
             else if (GPUMode == ASUSWmi.GPUModeUltimate)
             {
-                DialogResult dialogResult = MessageBox.Show("Ultimate Mode requires restart", "Reboot now?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Ultimate Mod'u açmak yeniden başlatma gerektiriyor", "Şimdi yeniden başlat?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     Program.wmi.DeviceSet(ASUSWmi.GPUMux, 0);
@@ -1168,19 +1168,19 @@ namespace GHelper
                     buttonOptimized.BorderColor = colorEco;
                     buttonEco.Activated = !GPUAuto;
                     buttonOptimized.Activated = GPUAuto;
-                    labelGPU.Text = "GPU Mode: iGPU only";
+                    labelGPU.Text = "GPU Modu: Sadece iGPU";
                     Program.trayIcon.Icon = Properties.Resources.eco;
                     break;
                 case ASUSWmi.GPUModeUltimate:
                     buttonUltimate.Activated = true;
-                    labelGPU.Text = "GPU Mode: dGPU exclusive";
+                    labelGPU.Text = "GPU Modu: Sadece dGPU";
                     Program.trayIcon.Icon = Properties.Resources.ultimate;
                     break;
                 default:
                     buttonOptimized.BorderColor = colorStandard;
                     buttonStandard.Activated = !GPUAuto;
                     buttonOptimized.Activated = GPUAuto;
-                    labelGPU.Text = "GPU Mode: iGPU + dGPU";
+                    labelGPU.Text = "GPU Modu: iGPU + dGPU";
                     Program.trayIcon.Icon = Properties.Resources.standard;
                     break;
             }
@@ -1227,7 +1227,7 @@ namespace GHelper
 
             if (limit < 40 || limit > 100) return;
 
-            labelBatteryTitle.Text = "Battery Charge Limit: " + limit.ToString() + "%";
+            labelBatteryTitle.Text = "Pil Şarj Sınırı: " + limit.ToString() + "%";
             trackBattery.Value = limit;
             Program.wmi.DeviceSet(ASUSWmi.BatteryLimit, limit);
 

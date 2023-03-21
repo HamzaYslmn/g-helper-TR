@@ -8,12 +8,12 @@ namespace GHelper
         Dictionary<string, string> customActions = new Dictionary<string, string>
         {
           {"","--------------" },
-          {"mute", "Volume Mute"},
-          {"screenshot", "Screenshot"},
-          {"play", "Play/Pause"},
+          {"mute", "Sesi Sustur"},
+          {"screenshot", "Ekran Görüntüsü"},
+          {"play", "Oynat/Duraklat"},
           {"aura", "Aura"},
-          {"ghelper", "Open GHelper"},
-          {"custom", "Custom"}
+          {"ghelper", "GHelper Aç"},
+          {"custom", "Özel"}
         };
 
         private void SetKeyCombo(ComboBox combo, TextBox txbox, string name)

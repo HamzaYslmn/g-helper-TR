@@ -60,7 +60,7 @@ namespace GHelper
             groupBox1.Size = new Size(751, 242);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Key Bindings";
+            groupBox1.Text = "Tuş Atamaları";
             // 
             // textM4
             // 
