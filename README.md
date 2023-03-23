@@ -6,7 +6,7 @@
 
 ## Asus ROG Zephyrus G14, G15, Flow X13, Flow X16 ve diğer modeller için açık kaynaklı Armory Crate alternatifi
 
-Fazladan yük ve gereksiz hizmetler olmadan Armory Crate ile yapabileceğiniz neredeyse her şeyi yapmanızı sağlayan küçük bir yardımcı programdır.
+Fazladan yük ve gereksiz hizmetler olmadan Armoury Crate ile yapabileceğiniz neredeyse her şeyi yapmanızı sağlayan küçük bir yardımcı programdır.
 
 ### :gift: Temel avantajları
 
@@ -65,11 +65,22 @@ Diğer modeller için PPT'ler G14 2022 için gösterilir, çünkü bios'ta ayarl
 ### M4 / Rog tuşuna her bastığımda Armory Crate kurulumu / açılış penceresi nasıl durdurulur?
 
 Her M4 / Rog tuşuna bastığımda Armory Crate yükleme açılır penceresini nasıl durdurabilirim?
-BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control Intrerface"yi devre dışı bırakın.
+BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control Intrerface"i devre dışı bırakın.
 
 ### Neden Ultimate GPU modu benim dizüstü bilgisayarımda mevcut değil?
-
 Ultimate modu (donanım tarafından) sadece 2022+ modellerde destekleniyor.
+
+#### G14 2020 cihazımda Eco modunu (dGPU'yu devre dışı bırak) ayarlayamıyorum
+Maalesef 2020 modelinde bunu donanım düzeyinde desteklemiyor.
+
+#### Özel PPT'ler ve Fan profilleri uygulamalı mıyım?
+Gerekli değil, tamamen isteğe bağlı. Deneyimlerimden, bios'ta bulunan performans modları iyi çalışıyor. Güç sınırlaması yapın veya özel fan eğrileri uygulayın, ancak sadece sorunlarınız varsa. Fan + güç bölümünde Uygula'yı tıkladığınız anda bios, fan profilini "özel" olarak düşünecektir! (düzenlemiş olsanız da olmasanız da)
+
+#### G-helper fan hızlarımı nasıl kontrol ediyor?
+Kontrol etmiyor. Bios'unuz kontrol ediyor (armoury ile aynı durumda). G-helper, aynı uç noktayı kullanarak (isteğe bağlı olarak) mevcut performans moduna 8 çift sıcaklık + fan hızı% 'lik özel bir fan profilini ayarlayabilir.
+
+#### Fan % değerini (fan RPM değerini) nasıl değiştirebilirim?
+Üzerlerine tıklayın
 
 ### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
 
