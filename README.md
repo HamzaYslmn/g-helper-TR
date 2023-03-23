@@ -70,6 +70,18 @@ BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control
 ### Neden Ultimate GPU modu benim dizüstü bilgisayarımda mevcut değil?
 Ultimate modu (donanım tarafından) sadece 2022+ modellerde destekleniyor.
 
+#### G14 2020 cihazımda Eco modunu (dGPU'yu devre dışı bırak) ayarlayamıyorum
+Maalesef 2020 modelinde bunu donanım düzeyinde desteklemiyor.
+
+#### Özel PPT'ler ve Fan profilleri uygulamalı mıyım?
+Gerekli değil, tamamen isteğe bağlı. Deneyimlerimden, bios'ta bulunan performans modları iyi çalışıyor. Güç sınırlaması yapın veya özel fan eğrileri uygulayın, ancak sadece sorunlarınız varsa. Fan + güç bölümünde Uygula'yı tıkladığınız anda bios, fan profilini "özel" olarak düşünecektir! (düzenlemiş olsanız da olmasanız da)
+
+#### G-helper fan hızlarımı nasıl kontrol ediyor?
+Kontrol etmiyor. Bios'unuz kontrol ediyor (armoury ile aynı durumda). G-helper, aynı uç noktayı kullanarak (isteğe bağlı olarak) mevcut performans moduna 8 çift sıcaklık + fan hızı% 'lik özel bir fan profilini ayarlayabilir.
+
+#### Fan % değerini (fan RPM değerini) nasıl değiştirebilirim?
+Üzerlerine tıklayın
+
 ### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
 
 Başlangıç ​​menüsünden "Olay Görüntüleyicisi"ni açın, Windows Kayıtları -> Uygulama'ya gidin ve G-Helper'ı belirten son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarıyla bir [Hata Raporu](https://github.com/seerge/g-helper/issues) gönderin.
