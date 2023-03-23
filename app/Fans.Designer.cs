@@ -232,7 +232,7 @@ namespace GHelper
             // 
             buttonReset.Activated = false;
             buttonReset.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            buttonReset.BackColor = SystemColors.ControlLight;
+            buttonReset.BackColor = Color.FromArgb(230, 230, 230);
             buttonReset.BorderColor = Color.Transparent;
             buttonReset.BorderRadius = 2;
             buttonReset.FlatStyle = FlatStyle.Flat;
@@ -249,7 +249,7 @@ namespace GHelper
             // 
             buttonApply.Activated = false;
             buttonApply.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonApply.BackColor = SystemColors.ControlLight;
+            buttonApply.BackColor = Color.FromArgb(230, 230, 230);
             buttonApply.BorderColor = Color.Transparent;
             buttonApply.BorderRadius = 2;
             buttonApply.FlatStyle = FlatStyle.Flat;
@@ -320,7 +320,7 @@ namespace GHelper
             // 
             buttonApplyPower.Activated = false;
             buttonApplyPower.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonApplyPower.BackColor = SystemColors.ControlLight;
+            buttonApplyPower.BackColor = Color.FromArgb(230, 230, 230);
             buttonApplyPower.BorderColor = Color.Transparent;
             buttonApplyPower.BorderRadius = 2;
             buttonApplyPower.FlatStyle = FlatStyle.Flat;
@@ -346,12 +346,11 @@ namespace GHelper
             // 
             // labelCPU
             // 
-            labelCPU.AutoSize = true;
             labelCPU.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCPU.Location = new Point(44, 40);
+            labelCPU.Location = new Point(13, 40);
             labelCPU.Margin = new Padding(4, 0, 4, 0);
             labelCPU.Name = "labelCPU";
-            labelCPU.Size = new Size(61, 32);
+            labelCPU.Size = new Size(120, 32);
             labelCPU.TabIndex = 13;
             labelCPU.Text = "CPU";
             labelCPU.TextAlign = ContentAlignment.MiddleCenter;
@@ -393,25 +392,24 @@ namespace GHelper
             // 
             // labelTotal
             // 
-            labelTotal.AutoSize = true;
             labelTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotal.Location = new Point(46, 40);
+            labelTotal.Location = new Point(16, 40);
             labelTotal.Margin = new Padding(4, 0, 4, 0);
             labelTotal.Name = "labelTotal";
-            labelTotal.Size = new Size(70, 32);
+            labelTotal.Size = new Size(122, 32);
             labelTotal.TabIndex = 12;
-            labelTotal.Text = "Total";
+            labelTotal.Text = "Platform";
             labelTotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(48, 8);
+            label1.Location = new Point(26, 8);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(65, 32);
+            label1.Size = new Size(104, 32);
             label1.TabIndex = 11;
-            label1.Text = "Total";
+            label1.Text = "Platform";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // trackTotal

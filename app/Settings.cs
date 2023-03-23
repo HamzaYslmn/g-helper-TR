@@ -10,7 +10,9 @@ namespace GHelper
     public partial class SettingsForm : RForm
     {
 
-        static System.Timers.Timer aTimer = default!;
+        public static System.Timers.Timer aTimer = default!;
+        public static Point trayPoint;
+
         static System.Timers.Timer matrixTimer = default!;
 
         public string versionUrl = "http://github.com/seerge/g-helper/releases";
@@ -21,6 +23,7 @@ namespace GHelper
         public Keyboard keyb;
 
         static AnimeMatrixDevice mat;
+        static long lastTip;
 
         public SettingsForm()
         {
@@ -114,12 +117,29 @@ namespace GHelper
             button120Hz.MouseMove += Button120Hz_MouseHover;
             button120Hz.MouseLeave += ButtonScreen_MouseLeave;
 
+            Program.trayIcon.MouseMove += TrayIcon_MouseMove;
+
             //buttonStandard.Image = (Image)(new Bitmap(buttonStandard.Image, new Size(16, 16)));
 
-            SetTimer();
+            aTimer = new System.Timers.Timer(500);
+            aTimer.Elapsed += OnTimedEvent;
 
         }
 
+        private static void TrayIcon_MouseMove(object? sender, MouseEventArgs e)
+        {
+            if (Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastTip) < 2000) return;
+            lastTip = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            RefreshSensors();
+        }
+
+
+        private static void OnTimedEvent(Object? source, ElapsedEventArgs? e)
+        {
+            aTimer.Interval = 2000;
+            if (Program.settingsForm.Visible)
+                RefreshSensors();
+        }
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
         {
@@ -252,8 +272,9 @@ namespace GHelper
             Program.config.setConfig("matrix_auto", check.Checked ? 1 : 0);
         }
 
-        private static void StartMatrixTimer()
+        private static void StartMatrixTimer(int interval = 100)
         {
+            matrixTimer.Interval = interval;
             matrixTimer.Enabled = true;
         }
 
@@ -265,14 +286,23 @@ namespace GHelper
         private static void MatrixTimer_Elapsed(object? sender, ElapsedEventArgs e)
         {
             if (mat is null) return;
-            mat.PresentNextFrame();
+
+            switch (Program.config.getConfig("matrix_running"))
+            {
+                case 2:
+                    mat.PresentNextFrame();
+                    break;
+                case 3:
+                    mat.PresentText(DateTime.Now.ToString("H:mm:ss"));
+                    break;
+            }
+
         }
 
         void SetMatrixPicture(string fileName)
         {
 
             if (mat is null) return;
-
             StopMatrixTimer();
 
             Image image;
@@ -315,8 +345,6 @@ namespace GHelper
                 mat.GenerateFrame(image);
                 mat.Present();
             }
-
-
         }
 
 
@@ -342,6 +370,8 @@ namespace GHelper
             if (fileName is not null)
             {
                 Program.config.setConfig("matrix_picture", fileName);
+                Program.config.setConfig("matrix_running", 2);
+
                 SetMatrixPicture(fileName);
                 BeginInvoke(delegate
                 {
@@ -397,16 +427,22 @@ namespace GHelper
                 mat.SetDisplayState(true);
                 mat.SetBrightness((BrightnessMode)brightness);
 
-                if (running == 2)
+                switch (running)
                 {
-                    string fileName = Program.config.getConfigString("matrix_picture");
-                    SetMatrixPicture(fileName);
-                }
-                else
-                {
-                    mat.SetBuiltInAnimation(true, animation);
+                    case 2:
+                        SetMatrixPicture(Program.config.getConfigString("matrix_picture"));
+                        break;
+                    case 3:
+                        mat.SetBuiltInAnimation(false);
+                        StartMatrixTimer(1000);
+                        break;
+                    default:
+                        mat.SetBuiltInAnimation(true, animation);
+                        break;
+
                 }
 
+                //mat.SetBrightness((BrightnessMode)brightness);
             }
 
         }
@@ -748,14 +784,6 @@ namespace GHelper
             SetGPUMode(ASUSWmi.GPUModeEco);
         }
 
-        private static void SetTimer()
-        {
-            aTimer = new System.Timers.Timer(500);
-            aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = false;
-        }
-
 
         private static string FormatFan(int fan)
         {
@@ -797,14 +825,12 @@ namespace GHelper
                 Program.settingsForm.labelGPUFan.Text = "GPU" + gpuTemp + gpuFan;
                 if (midFan is not null) Program.settingsForm.labelMidFan.Text = "Mid" + midFan;
                 Program.settingsForm.labelBattery.Text = battery;
+
+                Program.trayIcon.Text = "CPU" + cpuTemp + cpuFan + "\n" + "GPU" + gpuTemp + gpuFan + ((battery.Length > 0) ? ("\n" + battery) : "");
+
             });
         }
 
-        private static void OnTimedEvent(Object? source, ElapsedEventArgs? e)
-        {
-            RefreshSensors();
-            aTimer.Interval = 2000;
-        }
 
         private void SettingsForm_VisibleChanged(object? sender, EventArgs e)
         {

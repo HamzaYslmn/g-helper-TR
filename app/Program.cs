@@ -49,14 +49,16 @@ namespace GHelper
 
             }
 
-            SystemEvents.UserPreferenceChanged += new
-                 UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
 
             Application.EnableVisualStyles();
 
+            SystemEvents.UserPreferenceChanged += new
+                 UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+
             ds = settingsForm.Handle;
 
-            trayIcon.MouseClick += TrayIcon_MouseClick; ;
+            trayIcon.MouseClick += TrayIcon_MouseClick;
+            
 
             wmi.SubscribeToEvents(WatcherEventArrived);
 
@@ -76,7 +78,9 @@ namespace GHelper
             // Subscribing for system power change events
             SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
 
+            settingsForm.SetVersionLabel("Version: " + Assembly.GetExecutingAssembly().GetName().Version);
             CheckForUpdates();
+
 
             if (Environment.CurrentDirectory.Trim('\\') == Application.StartupPath.Trim('\\'))
             {
@@ -116,9 +120,6 @@ namespace GHelper
         static async void CheckForUpdates()
         {
 
-            var assembly = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            settingsForm.SetVersionLabel("Version: " + assembly);
-
             try
             {
                 using (var httpClient = new HttpClient())
@@ -130,19 +131,21 @@ namespace GHelper
                     var url = config.GetProperty("assets")[0].GetProperty("browser_download_url").ToString();
 
                     var gitVersion = new Version(tag);
-                    var appVersion = new Version(assembly);
-
-                    var result = gitVersion.CompareTo(appVersion);
-                    if (result > 0)
+                    var appVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                    if (gitVersion.CompareTo(appVersion) > 0)
                     {
-                        settingsForm.SetVersionLabel("Download Update: " + tag, url);
+                        settingsForm.BeginInvoke(delegate
+                        {
+                            settingsForm.SetVersionLabel("Download Update: " + tag, url);
+                        });
                     }
 
                 }
             }
-            catch
+            catch (Exception ex) 
             {
-                Logger.WriteLine("Failed to get update");
+                Logger.WriteLine("Failed to check for updates:"+ ex.Message);
+                
             }
 
         }
@@ -151,7 +154,7 @@ namespace GHelper
         public static void SetAutoModes(bool wait = false)
         {
 
-            if (Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastAuto) < 1000) return;
+            if (Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastAuto) < 2000) return;
             lastAuto = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
             PowerLineStatus isPlugged = SystemInformation.PowerStatus.PowerLineStatus;
