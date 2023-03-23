@@ -906,7 +906,7 @@ namespace GHelper
             comboKeyboard.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboKeyboard.FormattingEnabled = true;
             comboKeyboard.ItemHeight = 32;
-            comboKeyboard.Items.AddRange(new object[] { "Static", "Breathe", "Strobe", "Rainbow", "Dingding" });
+            comboKeyboard.Items.AddRange(new object[] { "Sabit", "Nefes", "Flaş", "GökKuşağı", "Dingding" });
             comboKeyboard.Location = new Point(4, 10);
             comboKeyboard.Margin = new Padding(4, 10, 4, 8);
             comboKeyboard.Name = "comboKeyboard";

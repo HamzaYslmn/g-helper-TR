@@ -195,7 +195,7 @@ namespace GHelper
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Maksimum Ekran Yenileme Hızı";
+            labelTipScreen.Text = "Maksimum Ekran Yenileme Hızı + OD (Gecikme Azaltma))";
         }
 
         private void Button60Hz_MouseHover(object? sender, EventArgs e)
