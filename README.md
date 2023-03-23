@@ -1,8 +1,8 @@
-# [G-Helper (GHelper)](https://github.com/seerge/g-helper)
+# [G-Helper-TR (GHelper)](https://github.com/HamzaYslmn/g-helper-TR)
 
 ![https://img.shields.io/github/downloads/seerge/g-helper/total.svg](https://img.shields.io/github/downloads/seerge/g-helper/total.svg)
 ![https://img.shields.io/github/release/seerge/g-helper.svg](https://img.shields.io/github/release/seerge/g-helper.svg)
-![https://img.shields.io/github/stars/seerge/g-helper.svg?style=social&label=Star&maxAge=2592000](https://img.shields.io/github/stars/seerge/g-helper.svg?style=social&label=Star&maxAge=2592000)
+![https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000](https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000)
 
 ## Asus ROG Zephyrus G14, G15, Flow X13, Flow X16 ve diğer modeller için açık kaynaklı Armory Crate alternatifi
 
