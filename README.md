@@ -1,7 +1,7 @@
 # [G-Helper-TR (GHelper)](https://github.com/HamzaYslmn/g-helper-TR)
 
-![https://img.shields.io/github/downloads/seerge/g-helper/total.svg](https://img.shields.io/github/downloads/seerge/g-helper/total.svg)
-![https://img.shields.io/github/release/seerge/g-helper.svg](https://img.shields.io/github/release/seerge/g-helper.svg)
+![https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total.svg](https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total.svg)
+![https://img.shields.io/github/release/HamzaYslmn/g-helper-TR.svg](https://img.shields.io/github/release/HamzaYslmn/g-helper-TR.svg)
 ![https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000](https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000)
 
 ## Asus ROG Zephyrus G14, G15, Flow X13, Flow X16 ve diğer modeller için açık kaynaklı Armory Crate alternatifi
@@ -14,11 +14,11 @@ Fazladan yük ve gereksiz hizmetler olmadan Armory Crate ile yapabileceğiniz ne
 2. Tüm performans modları tamamen özelleştirilebilir (fan eğrileri ve PPT'lerle)
 3. Çok hafiftir ve neredeyse hiç kaynak tüketmez, hiçbir hizmet yüklemez. Sadece çalıştırılacak tek bir exe dosyası
 
-### [:floppy_disk: En son sürümü indirin](https://github.com/seerge/g-helper/releases/latest/download/GHelper.zip)
+### [:floppy_disk: En son sürümü indirin](https://github.com/HamzaYslmn/g-helper-TR/releases/latest/download/GHelper.zip)
 
 Bu uygulamayı beğendiyseniz, lütfen Github'da :star: ile işaretleyin.
 
-![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshot.png](https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshot.png)
+![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshot.png](https://raw.githubusercontent.com/HamzaYslmn/g-helper-TR/main/docs/screenshot.png)
 
 ### :zap: Temel özellikler
 
@@ -73,7 +73,7 @@ Ultimate modu (donanım tarafından) sadece 2022+ modellerde destekleniyor.
 
 ### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
 
-Başlangıç ​​menüsünden "Olay Görüntüleyicisi"ni açın, Windows Kayıtları -> Uygulama'ya gidin ve G-Helper'ı belirten son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarıyla bir [yeni konu](https://github.com/seerge/g-helper/issues) gönderin.
+Başlangıç ​​menüsünden "Olay Görüntüleyicisi"ni açın, Windows Kayıtları -> Uygulama'ya gidin ve G-Helper'ı belirten son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarıyla bir [Hata Raporu](https://github.com/seerge/g-helper/issues) gönderin.
 
 ### G-helper'ı nasıl kaldırabilirim?
 
@@ -85,7 +85,7 @@ Standart moda geçtikten sonra, özel fan profillerini ve PPT'leri uygulamayı k
 
 ### Nasıl yüklenir
 
-1. **[Sürümler sayfasından](https://github.com/seerge/g-helper/releases)** en son sürümü indirin
+1. **[Sürümler sayfasından](https://github.com/HamzaYslmn/g-helper-TR/releases)** en son sürümü indirin
 2. Seçtiğiniz bir klasöre çıkartın (Tavsiyem: C:\G-Helper)
 3. **GHelper.exe**'yi çalıştırın
 

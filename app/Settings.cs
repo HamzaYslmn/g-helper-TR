@@ -17,7 +17,7 @@ namespace GHelper
 
         static System.Timers.Timer matrixTimer = default!;
 
-        public string versionUrl = "http://github.com/seerge/g-helper/releases";
+        public string versionUrl = "http://github.com/HamzaYslmn/g-helper-TR/releases";
 
         public string perfName = "Balanced";
 
