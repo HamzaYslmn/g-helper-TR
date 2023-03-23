@@ -14,7 +14,7 @@ Fazladan yük ve gereksiz hizmetler olmadan Armory Crate ile yapabileceğiniz ne
 2. Tüm performans modları tamamen özelleştirilebilir (fan eğrileri ve PPT'lerle)
 3. Çok hafiftir ve neredeyse hiç kaynak tüketmez, hiçbir hizmet yüklemez. Sadece çalıştırılacak tek bir exe dosyası
 
-### [:floppy_disk: En son sürümü indirin](https://github.com/HamzaYslmn/g-helper-TR/releases/latest/download/GHelper.zip)
+### [:floppy_disk: En son sürümü indirin](https://github.com/HamzaYslmn/g-helper-TR/releases/latest/download/GHelperTR.zip)
 
 Bu uygulamayı beğendiyseniz, lütfen Github'da :star: ile işaretleyin.
 
