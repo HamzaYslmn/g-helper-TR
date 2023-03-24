@@ -99,8 +99,8 @@ Standart moda geçtikten sonra, özel fan profillerini ve PPT'leri uygulamayı k
 ### Nasıl yüklenir
 
 1. **[Sürümler sayfasından](https://github.com/HamzaYslmn/g-helper-TR/releases)** en son sürümü indirin
-2. Seçtiğiniz bir klasöre çıkartın (Tavsiyem: C:\G-Helper)
-3. **GHelper.exe**'yi çalıştırın
+2. Seçtiğiniz bir klasöre çıkartın (Tavsiyem: C:\G-HelperTR)
+3. **GHelperTR.exe**'yi çalıştırın
 
 ### Gereksinimler
 
