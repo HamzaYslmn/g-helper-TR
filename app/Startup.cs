@@ -27,8 +27,6 @@ public class Startup
 
         var trigger = new LogonTrigger { UserId = userId, Delay = TimeSpan.FromSeconds(10) }; // 10 saniye gecikme
         td.Triggers.Add(trigger);
-
-        td.Triggers.Add(new LogonTrigger { UserId = userId });
         td.Actions.Add(strExeFilePath);
 
         td.Settings.StopIfGoingOnBatteries = false;
