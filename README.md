@@ -82,14 +82,16 @@ Kontrol etmiyor. Bios'unuz kontrol ediyor (armoury ile aynı durumda). G-helper,
 #### Fan % değerini (fan RPM değerini) nasıl değiştirebilirim?
 Üzerlerine tıklayın
 
-### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
+#### G-helper'da GPU sıcaklığını göremiyorum.
+Muhtemelen Eco / Optimized modunu kullanıyorsunuz ve dGPU'nuz kapalı durumda veya Windows güç tasarrufu için dGPU'yu uyku moduna almış olabilir. Bu durumlarda G-helper GPU'nuzu okuyamayacak ve sıcaklık okumaları alamayacaktır.
+
+#### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
 
 Başlangıç ​​menüsünden "Olay Görüntüleyicisi"ni açın, Windows Kayıtları -> Uygulama'ya gidin ve G-Helper'ı belirten son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarıyla bir [Hata Raporu](https://github.com/seerge/g-helper/issues) gönderin.
 
-### G-helper'ı nasıl kaldırabilirim?
+#### G-helper'ı nasıl kaldırabilirim?
 
 G-helper tek bir exe'dir ve sisteme hiçbir şey yüklemez. Kaldırmak için - exe'yi sadece silmeniz yeterlidir :) 
-
 Standart moda geçtikten sonra, özel fan profillerini ve PPT'leri uygulamayı kaldırmadan önce temizlemenizi öneririm.
 
 ---
