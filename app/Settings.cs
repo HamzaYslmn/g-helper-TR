@@ -30,6 +30,7 @@ namespace GHelper
         public SettingsForm()
         {
             InitializeComponent();
+            this.TopMost = true;
             InitTheme();
 
             FormClosing += SettingsForm_FormClosing;
