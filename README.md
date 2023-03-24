@@ -105,7 +105,7 @@ Standart moda geçtikten sonra, özel fan profillerini ve PPT'leri uygulamayı k
 ### Gereksinimler
 
 - Uygulama için [.NET7](https://dotnet.microsoft.com/en-us/download) yüklü olmalıdır. Muhtemelen zaten sizde yüklüdür. Yoksa Otomatik olarak indirmek için uyarı balonu çıkar.
-- "Asus Optimization Service" adlı hizmetin çalışmasını öneririm, çünkü ekran veya klavye parlaklığı gibi temel dizüstü bilgisayar kısayollarını çalışır durumda tutar. Eğer MyASUS uygulaması yüklediyseniz, hizmetin MyASUS kaldırıldıktan sonra bile muhtemelen hala çalışıyor olduğunu unutmayın. Bu [Asus Sistem Kontrol Arayüzü'nün](https://www.asus.com/support/FAQ/1047338/)parçasıdır. Yönetici olarak çalıştırarak gereksiz hizmetleri devre dışı bırakabilirsiniz.
+- "Asus Optimization Service" adlı hizmetin çalışmasını öneririm, çünkü ekran veya klavye parlaklığı gibi temel dizüstü bilgisayar kısayollarını çalışır durumda tutar. Eğer MyASUS uygulaması yüklediyseniz, hizmetin MyASUS kaldırıldıktan sonra bile muhtemelen hala çalışıyor olduğunu unutmayın. Bu Uygulama [Asus Sistem Kontrol Arayüzü'nün](https://www.asus.com/support/FAQ/1047338/)parçasıdır, eğer sizde kurulu değilse çalışmaz.
 - Uygulamayı Armory Crate ile birlikte kullanmanız önerilmez, çünkü aynı ayarları düzenlerler. [Kendi kaldırma aracını kullanarak](https://dlcdnets.asus.com/pub/ASUS/mb/14Utilities/Armoury_Crate_Uninstall_Tool.zip?model=armoury%20crate) ArmouryCreate'i kaldırabilirsiniz. Her ihtimale karşı, her zaman geri yükleyebilirsiniz.
 
 - Gereksiz hizmetleri otomatik olarak devre dışı bırakmak/kaldırmak için [bu bat dosyasını](https://github.com/HamzaYslmn/g-helper-TR/blob/main/debloat.bat) yönetici olarak çalştırın.
