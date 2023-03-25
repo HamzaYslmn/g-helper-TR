@@ -122,7 +122,7 @@ namespace GHelper
             aTimer = new System.Timers.Timer(500);
             aTimer.Elapsed += OnTimedEvent;
 
-            SetVersionLabel("Version: " + Assembly.GetExecutingAssembly().GetName().Version);
+            SetVersionLabel("Sürüm: " + Assembly.GetExecutingAssembly().GetName().Version);
             Thread t = new Thread(() =>
             {
                 CheckForUpdatesAsync();
@@ -166,7 +166,7 @@ namespace GHelper
                     {
                         BeginInvoke(delegate
                         {
-                            SetVersionLabel("Download Update: " + tag, url);
+                            SetVersionLabel("Güncelleme: " + tag, url);
                         });
                     }
                     else

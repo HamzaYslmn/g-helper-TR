@@ -478,7 +478,7 @@ namespace GHelper
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Fans and Power";
+            Text = "Fan Eğrileri ve Güç Ayarları";
             panelFans.ResumeLayout(false);
             panelFans.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picturePerf).EndInit();

@@ -153,7 +153,7 @@ namespace GHelper
             Padding = new Padding(10);
             ShowIcon = false;
             ShowInTaskbar = false;
-            Text = "Keyboard";
+            Text = "Klavye Ayarları";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
