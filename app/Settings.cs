@@ -152,7 +152,7 @@ namespace GHelper
                 using (var httpClient = new HttpClient())
                 {
                     httpClient.DefaultRequestHeaders.Add("User-Agent", "C# App");
-                    var json = await httpClient.GetStringAsync("https://api.github.com/repos/seerge/g-helper/releases/latest");
+                    var json = await httpClient.GetStringAsync("https://api.github.com/repos/HamzaYslmn/g-helper-TR/releases/latest");
                     var config = JsonSerializer.Deserialize<JsonElement>(json);
                     var tag = config.GetProperty("tag_name").ToString().Replace("v", "");
                     var url = config.GetProperty("assets")[0].GetProperty("browser_download_url").ToString();
