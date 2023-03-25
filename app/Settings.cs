@@ -222,12 +222,12 @@ namespace GHelper
 
         private void ButtonStandard_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Normal kullanım için dGPU ve iGPU kullanılır";
+            labelTipGPU.Text = "Günlük kullanım için dGPU ve iGPU kullanılır";
         }
 
         private void ButtonEco_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Batarya tasarrufu için sadece iGPU kullanılır";
+            labelTipGPU.Text = "Güç tüketimini azaltmak için sadece iGPU kullanılır ( Isı Düşer )";
         }
 
         private void ButtonOptimized_MouseHover(object? sender, EventArgs e)
