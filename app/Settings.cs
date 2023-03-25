@@ -127,7 +127,14 @@ namespace GHelper
             Program.unRegPowerNotify = NativeMethods.RegisterPowerSettingNotification(Handle, settingGuid.ConsoleDisplayState, NativeMethods.DEVICE_NOTIFY_WINDOW_HANDLE);
 
             SetVersionLabel("Sürüm: " + Assembly.GetExecutingAssembly().GetName().Version);
-            Thread t = new Thread(() =>
+            
+            string model = Program.config.GetModel();
+            int trim = model.LastIndexOf("_");
+            if (trim > 0) model = model.Substring(0, trim);
+
+            labelModel.Text = model;
+
+            Task.Run(async () =>
             {
                 await Task.Delay(TimeSpan.FromSeconds(5));
                 CheckForUpdatesAsync();
