@@ -909,11 +909,11 @@ namespace GHelper
                 if (Program.config.getConfig("mid_fan") == 1)
                     Program.wmi.SetFanCurve(2, Program.config.getFanConfig(2));
 
-                labelPerf.Text = "Performance Mode+";
+                labelPerf.Text = "Performans Modu+";
 
             } else
             {
-                labelPerf.Text = "Performance Mode";
+                labelPerf.Text = "Performans Modu";
             }
 
             if (Program.config.getConfigPerf("auto_apply_power") == 1)

@@ -402,7 +402,7 @@ namespace GHelper
             labelPerf.Name = "labelPerf";
             labelPerf.Size = new Size(234, 32);
             labelPerf.TabIndex = 31;
-            labelPerf.Text = "Performans Modları";
+            labelPerf.Text = "Performans Modu";
             // 
             // labelCPUFan
             // 
