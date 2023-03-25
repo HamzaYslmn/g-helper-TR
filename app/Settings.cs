@@ -590,14 +590,6 @@ namespace GHelper
             comboKeyboard.SelectedValue = Aura.Mode;
             comboKeyboard.SelectedValueChanged += ComboKeyboard_SelectedValueChanged;
 
-            comboKeyboardSpeed.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboKeyboardSpeed.DataSource = new BindingSource(Aura.GetSpeeds(), null);
-            comboKeyboardSpeed.DisplayMember = "Value";
-            comboKeyboardSpeed.ValueMember = "Key";
-            comboKeyboardSpeed.SelectedValue = Aura.Speed;
-            comboKeyboardSpeed.SelectedValueChanged += ComboKeyboardSpeed_SelectedValueChanged;
-
-
             pictureColor.BackColor = Aura.Color1;
             pictureColor2.BackColor = Aura.Color2;
             pictureColor2.Visible = Aura.HasSecondColor();
@@ -647,7 +639,7 @@ namespace GHelper
 
         public void CycleAuraMode()
         {
-            if (comboKeyboard.SelectedIndex < comboKeyboard.Items.Count-1) 
+            if (comboKeyboard.SelectedIndex < comboKeyboard.Items.Count - 1)
                 comboKeyboard.SelectedIndex += 1;
             else
                 comboKeyboard.SelectedIndex = 0;
@@ -656,12 +648,6 @@ namespace GHelper
         private void ComboKeyboard_SelectedValueChanged(object? sender, EventArgs e)
         {
             Program.config.setConfig("aura_mode", (int)comboKeyboard.SelectedValue);
-            SetAura();
-        }
-
-        private void ComboKeyboardSpeed_SelectedValueChanged(object? sender, EventArgs e)
-        {
-            Program.config.setConfig("aura_speed", (int)comboKeyboardSpeed.SelectedValue);
             SetAura();
         }
 
