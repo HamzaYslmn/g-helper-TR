@@ -166,7 +166,7 @@ namespace GHelper
                     {
                         BeginInvoke(delegate
                         {
-                            SetVersionLabel("Güncelleme: " + tag, url);
+                            SetVersionLabel("Yeni Sürüm Var: " + tag, url);
                         });
                     }
                     else
