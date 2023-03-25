@@ -197,7 +197,7 @@ namespace GHelper
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Maksimum Ekran Yenileme Hızı + OD (Gecikme Azaltma))";
+            labelTipScreen.Text = "Maksimum Ekran Yenileme Hızı + OD (Gecikme Azaltma)";
         }
 
         private void Button60Hz_MouseHover(object? sender, EventArgs e)
@@ -212,7 +212,7 @@ namespace GHelper
 
         private void ButtonScreenAuto_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Otomatik Ekran Yenileme Hızı (Pilde ve Şarjda)";
+            labelTipScreen.Text = "Otomatik Ekran Yenileme Hızı (Pilde ve Şarjda Otomatik Geçiş)";
         }
 
         private void ButtonUltimate_MouseHover(object? sender, EventArgs e)
@@ -232,7 +232,7 @@ namespace GHelper
 
         private void ButtonOptimized_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Otomatik GPU modu (Pilde ve Şarjda)";
+            labelTipGPU.Text = "Otomatik GPU modu (Pilde ve Şarjda Otomatik Geçiş)";
         }
 
         private void ButtonGPU_MouseLeave(object? sender, EventArgs e)
