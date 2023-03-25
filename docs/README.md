@@ -2,7 +2,7 @@
 
 [![Github all releases](https://img.shields.io/github/downloads/seerge/g-helper/total.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub release](https://img.shields.io/github/release/seerge/g-helper.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub stars](https://img.shields.io/github/stars/seerge/g-helper.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/seerge/g-helper/stargazers/)
 
-## Open source Armoury Crate alternative for Asus ROG Zephyrus G14, G15, Flow X13, Flow X16, and other models
+## Open source Armoury Crate alternative for Asus laptops such as ROG Zephyrus G14, G15, Flow X13, Flow X16, and other models
 
 A small utility that allows you to do almost everything you could do with Armoury Crate but without extra bloat and unnecessary services.
 
@@ -11,6 +11,7 @@ A small utility that allows you to do almost everything you could do with Armour
 1. Seamless and automatic GPU switching (without asking you to close all apps, etc)
 2. All performance modes can be fully customized (with fan curves and PPTs)
 3. Very lightweight and consumes almost no resources, doesn't install any services. Just a single exe to run
+4. Simple and clean UI with easy access to all settings
 
 ### [:floppy_disk: Download latest release](https://github.com/seerge/g-helper/releases/latest/download/GHelper.zip)
 
@@ -60,7 +61,7 @@ PPTs are shown for G14 2022, for other models PPTs will be different as they are
 ## :question: FAQ
 
 ### How do I stop Armory Crate install popup appearing every time I press M4 / Rog key?
-Go to BIOS (F2 on boot), open Advanced Settings and disable "Armory Control Interface"  
+Go to BIOS (F2 on boot), open Advanced Settings and disable "Armory Control Interface". If it still appears - delete or move somwhere following file  C:\Windows\System32\ASUSACCI\ArmouryCrateKeyControl.exe
 
 ### Why Ultimate GPU mode is not available on my laptop?
 Ultimate mode is supported (by hardware) only on G14 2022 (and possibly other models from 2022+)
