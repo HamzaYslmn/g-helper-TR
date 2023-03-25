@@ -999,7 +999,7 @@ namespace GHelper
             buttonKeyboard.Secondary = true;
             buttonKeyboard.Size = new Size(185, 44);
             buttonKeyboard.TabIndex = 37;
-            buttonKeyboard.Text = "Extra";
+            buttonKeyboard.Text = "Ekstra";
             buttonKeyboard.UseVisualStyleBackColor = false;
             // 
             // pictureKeyboard
