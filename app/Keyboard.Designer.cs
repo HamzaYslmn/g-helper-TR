@@ -161,7 +161,7 @@ namespace GHelper
             groupLight.Size = new Size(751, 304);
             groupLight.TabIndex = 1;
             groupLight.TabStop = false;
-            groupLight.Text = "Keyboard Backlight";
+            groupLight.Text = "Klavye Aydınlatması";
             // 
             // checkAwake
             // 
@@ -170,7 +170,7 @@ namespace GHelper
             checkAwake.Name = "checkAwake";
             checkAwake.Size = new Size(115, 36);
             checkAwake.TabIndex = 0;
-            checkAwake.Text = "Awake";
+            checkAwake.Text = "Cihaz Açıkken";
             checkAwake.UseVisualStyleBackColor = true;
             // 
             // checkBoot
@@ -180,7 +180,7 @@ namespace GHelper
             checkBoot.Name = "checkBoot";
             checkBoot.Size = new Size(96, 36);
             checkBoot.TabIndex = 1;
-            checkBoot.Text = "Boot";
+            checkBoot.Text = "Açılışta";
             checkBoot.UseVisualStyleBackColor = true;
             // 
             // checkSleep
@@ -190,7 +190,7 @@ namespace GHelper
             checkSleep.Name = "checkSleep";
             checkSleep.Size = new Size(105, 36);
             checkSleep.TabIndex = 2;
-            checkSleep.Text = "Sleep";
+            checkSleep.Text = "Uykuda";
             checkSleep.UseVisualStyleBackColor = true;
             // 
             // checkShutdown
@@ -200,7 +200,7 @@ namespace GHelper
             checkShutdown.Name = "checkShutdown";
             checkShutdown.Size = new Size(154, 36);
             checkShutdown.TabIndex = 3;
-            checkShutdown.Text = "Shutdown";
+            checkShutdown.Text = "Kapatırken";
             checkShutdown.UseVisualStyleBackColor = true;
             // 
             // comboKeyboardSpeed
@@ -226,7 +226,7 @@ namespace GHelper
             labelSpeed.Name = "labelSpeed";
             labelSpeed.Size = new Size(198, 32);
             labelSpeed.TabIndex = 40;
-            labelSpeed.Text = "Animation Speed";
+            labelSpeed.Text = "Animasyon Hızı";
             // 
             // Keyboard
             // 
