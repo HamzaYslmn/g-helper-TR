@@ -1,8 +1,8 @@
 # [G-Helper-TR (GHelper)](https://github.com/HamzaYslmn/g-helper-TR)
 
-![https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total.svg](https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total.svg)
-![https://img.shields.io/github/release/HamzaYslmn/g-helper-TR.svg](https://img.shields.io/github/release/HamzaYslmn/g-helper-TR.svg)
-![https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000](https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR.svg?style=social&label=Star&maxAge=2592000)
+![https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total?style=for-the-badge](https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total?style=for-the-badge)
+![https://img.shields.io/github/v/release/HamzaYslmn/g-helper-TR.svg?style=for-the-badge](https://img.shields.io/github/v/release/HamzaYslmn/g-helper-TR.svg?style=for-the-badge)
+![https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR?color=e3b341&style=for-the-badge](https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR?color=e3b341&style=for-the-badge)
 
 ## Asus ROG Zephyrus G14, G15, Flow X13, Flow X16 ve diğer modeller için açık kaynaklı Armory Crate alternatifi
 
