@@ -33,9 +33,9 @@ namespace GHelper
         public static void Main()
         {
 
-            if (Process.GetProcesses().Count(p => p.ProcessName == "GHelper") > 1)
+            if (Process.GetProcesses().Count(p => p.ProcessName == "GHelperTR") > 1)
             {
-                MessageBox.Show("G-Helper is already running. Check system tray for an icon.", "App already running", MessageBoxButtons.OK);
+                MessageBox.Show("G-Helper-TR zaten çalışıyor. Sistem tepsisini kontrol edin.", "Uygulama Zaten Çalışıyor !", MessageBoxButtons.OK);
                 Application.Exit();
                 return;
             }
