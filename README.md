@@ -19,7 +19,7 @@ Fazladan yük ve gereksiz hizmetler olmadan Armoury Crate ile yapabileceğiniz n
 
 Bu uygulamayı beğendiyseniz, lütfen [Github'da :star: ile](https://github.com/seerge/g-helper) işaretleyin.
 
-![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshot.png](https://raw.githubusercontent.com/HamzaYslmn/g-helper-TR/main/docs/screenshot.png)
+![https://user-images.githubusercontent.com/78810304/228032141-8146a3de-d440-46cc-b047-a681e6c017af.png](https://user-images.githubusercontent.com/78810304/228032141-8146a3de-d440-46cc-b047-a681e6c017af.png)
 
 ### :zap: Temel özellikler
 
