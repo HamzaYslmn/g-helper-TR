@@ -13,10 +13,11 @@ Fazladan yük ve gereksiz hizmetler olmadan Armoury Crate ile yapabileceğiniz n
 1. Sorunsuz ve otomatik GPU geçişleri (tüm uygulamalarınızı kapatmanızı vb. istemeden)
 2. Tüm performans modları tamamen özelleştirilebilir (fan eğrileri ve PPT'lerle)
 3. Çok hafiftir ve neredeyse hiç kaynak tüketmez, hiçbir hizmet yüklemez. Sadece çalıştırılacak tek bir exe dosyası
+4. Tüm ayarlara kolay erişim sağlayan basit ve temiz kullanıcı arayüzü
 
 ### [:floppy_disk: En son sürümü indirin](https://github.com/HamzaYslmn/g-helper-TR/releases/latest/download/GHelperTR.zip)
 
-Bu uygulamayı beğendiyseniz, lütfen Github'da :star: ile işaretleyin.
+Bu uygulamayı beğendiyseniz, lütfen [Github'da :star: ile](https://github.com/seerge/g-helper) işaretleyin.
 
 ![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshot.png](https://raw.githubusercontent.com/HamzaYslmn/g-helper-TR/main/docs/screenshot.png)
 
@@ -121,7 +122,7 @@ Uygulamayı imzalamak için henüz bir Microsoft sertifikam yok, bu nedenle baş
 Ayarlar dosyası `%AppData%\\GHelper`'da saklanır.
 ---
 
-[Debloating](https://github.com/HamzaYslmn/g-helper-TR/blob/main/debloat.bat), pilinizi ve dizüstü bilgisayarınızı biraz daha serin tutmanıza yardımcı olur.
+[HHzimetleri Devre Dışı Bırakmak (debloat.bat)](https://github.com/HamzaYslmn/g-helper-TR/blob/main/debloat.bat), pilinizi ve dizüstü bilgisayarınızı biraz daha serin tutmanıza yardımcı olur.
 
 ![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshots/screen-5w.png](https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshots/screen-5w.png)
 
