@@ -838,7 +838,7 @@ namespace GHelper
                 cpuTemp = ": " + Math.Round((decimal)HardwareMonitor.cpuTemp).ToString() + "°C - ";
 
             if (HardwareMonitor.batteryDischarge > 0)
-                battery = "Discharging: " + Math.Round((decimal)HardwareMonitor.batteryDischarge, 1).ToString() + "W";
+                battery = "Pil deşarjı: " + Math.Round((decimal)HardwareMonitor.batteryDischarge, 1).ToString() + "W";
 
             if (HardwareMonitor.gpuTemp != null)
             {
