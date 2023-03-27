@@ -16,4 +16,4 @@ sc config  ASUSSystemAnalysis start= disabled
 sc config  ASUSSystemDiagnosis start= disabled
 sc config  ArmouryCrateControlInterface start= disabled
 
-set /p asd="Hit enter to finish"
+set /p asd="Son, Enter'a Basın"
