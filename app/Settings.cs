@@ -18,7 +18,7 @@ namespace GHelper
 
         static System.Timers.Timer matrixTimer = default!;
 
-        public string versionUrl = "http://github.com/seerge/g-helper/releases";
+        public string versionUrl = "http://github.com/HamzaYslmn/g-helper-TR/releases";
 
         public string perfName = "Balanced";
 
@@ -126,7 +126,7 @@ namespace GHelper
             var settingGuid = new NativeMethods.PowerSettingGuid();
             Program.unRegPowerNotify = NativeMethods.RegisterPowerSettingNotification(Handle, settingGuid.ConsoleDisplayState, NativeMethods.DEVICE_NOTIFY_WINDOW_HANDLE);
 
-            SetVersionLabel("Version: " + Assembly.GetExecutingAssembly().GetName().Version);
+            SetVersionLabel("Sürüm: " + Assembly.GetExecutingAssembly().GetName().Version);
             
             string model = Program.config.GetModel();
             int trim = model.LastIndexOf("_");
@@ -161,7 +161,7 @@ namespace GHelper
                 using (var httpClient = new HttpClient())
                 {
                     httpClient.DefaultRequestHeaders.Add("User-Agent", "C# App");
-                    var json = await httpClient.GetStringAsync("https://api.github.com/repos/seerge/g-helper/releases/latest");
+                    var json = await httpClient.GetStringAsync("https://api.github.com/repos/HamzaYslmn/g-helper-TR/releases/latest");
                     var config = JsonSerializer.Deserialize<JsonElement>(json);
                     var tag = config.GetProperty("tag_name").ToString().Replace("v", "");
                     var url = config.GetProperty("assets")[0].GetProperty("browser_download_url").ToString();
@@ -173,7 +173,7 @@ namespace GHelper
                     {
                         BeginInvoke(delegate
                         {
-                            SetVersionLabel("Download Update: " + tag, url);
+                            SetVersionLabel("Yeni Sürüm: " + tag, url);
                         });
                     }
                     else
@@ -204,12 +204,12 @@ namespace GHelper
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Max refresh rate for lower latency";
+            labelTipScreen.Text = "Maksimum yenileme hızı + Düşük gecikme(3ms)";
         }
 
         private void Button60Hz_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "60Hz refresh rate to save battery";
+            labelTipScreen.Text = "Güç tasarrufu için 60Hz";
         }
 
         private void ButtonScreen_MouseLeave(object? sender, EventArgs e)
@@ -219,27 +219,27 @@ namespace GHelper
 
         private void ButtonScreenAuto_MouseHover(object? sender, EventArgs e)
         {
-            labelTipScreen.Text = "Sets 60Hz to save battery, and back when plugged";
+            labelTipScreen.Text = "Pil tasarrufu için otomatik Hz geçişini ayarla (60/Max Hz)";
         }
 
         private void ButtonUltimate_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Routes laptop screen to dGPU, maximizing FPS";
+            labelTipGPU.Text = "Ekranı dGPU'ya yönlendirerek FPS'yi maksimuma çıkarır.(MUX)";
         }
 
         private void ButtonStandard_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Enables dGPU for standard use";
+            labelTipGPU.Text = "Standart kullanım için dGPU'yu etkinleştirir.";
         }
 
         private void ButtonEco_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Disables dGPU for battery savings";
+            labelTipGPU.Text = "Güç Tasarrufu için dGPU'yu devre dışı bırakır. (Isı Düşer)";
         }
 
         private void ButtonOptimized_MouseHover(object? sender, EventArgs e)
         {
-            labelTipGPU.Text = "Switch to Eco on battery and to Standard when plugged";
+            labelTipGPU.Text = "Pil tasarrufu için otomatik GPU modunu ayarla (Eco/Standart)";
         }
 
         private void ButtonGPU_MouseLeave(object? sender, EventArgs e)
@@ -737,8 +737,8 @@ namespace GHelper
             ButtonEnabled(buttonMiniled, screenEnabled);
 
             labelSreen.Text = screenEnabled
-                ? "Laptop Screen: " + frequency + "Hz" + ((overdrive == 1) ? " + Overdrive" : "")
-                : "Laptop Screen: Turned off";
+                ? "Laptop Ekranı: " + frequency + "Hz" + ((overdrive == 1) ? " + OverDrive" : "")
+                : "Laptop Ekranı: Kapalı";
 
             button60Hz.Activated = false;
             button120Hz.Activated = false;
@@ -913,11 +913,11 @@ namespace GHelper
                 if (Program.config.getConfig("mid_fan") == 1)
                     Program.wmi.SetFanCurve(2, Program.config.getFanConfig(2));
 
-                labelPerf.Text = "Performance Mode+";
+                labelPerf.Text = "Performans Modu +";
 
             } else
             {
-                labelPerf.Text = "Performance Mode";
+                labelPerf.Text = "Performans Modu";
             }
 
             if (Program.config.getConfigPerf("auto_apply_power") == 1)
@@ -1130,7 +1130,7 @@ namespace GHelper
             ButtonEnabled(buttonStandard, false);
             ButtonEnabled(buttonUltimate, false);
 
-            labelGPU.Text = "GPU Mode: Changing ...";
+            labelGPU.Text = "GPU Modu: Değişiyor ...";
 
             Thread t = new Thread(() =>
             {
@@ -1239,19 +1239,19 @@ namespace GHelper
                     buttonOptimized.BorderColor = colorEco;
                     buttonEco.Activated = !GPUAuto;
                     buttonOptimized.Activated = GPUAuto;
-                    labelGPU.Text = "GPU Mode: iGPU only";
+                    labelGPU.Text = "GPU Modu: Sadece iGPU";
                     Program.trayIcon.Icon = Properties.Resources.eco;
                     break;
                 case ASUSWmi.GPUModeUltimate:
                     buttonUltimate.Activated = true;
-                    labelGPU.Text = "GPU Mode: dGPU exclusive";
+                    labelGPU.Text = "GPU Modu: Sadece dGPU";
                     Program.trayIcon.Icon = Properties.Resources.ultimate;
                     break;
                 default:
                     buttonOptimized.BorderColor = colorStandard;
                     buttonStandard.Activated = !GPUAuto;
                     buttonOptimized.Activated = GPUAuto;
-                    labelGPU.Text = "GPU Mode: iGPU + dGPU";
+                    labelGPU.Text = "GPU Modu: iGPU + dGPU";
                     Program.trayIcon.Icon = Properties.Resources.standard;
                     break;
             }
@@ -1298,7 +1298,7 @@ namespace GHelper
 
             if (limit < 40 || limit > 100) return;
 
-            labelBatteryTitle.Text = "Battery Charge Limit: " + limit.ToString() + "%";
+            labelBatteryTitle.Text = "Batarya Şarj Sınırı: " + limit.ToString() + "%";
             trackBattery.Value = limit;
 
             Program.wmi.DeviceSet(ASUSWmi.BatteryLimit, limit);

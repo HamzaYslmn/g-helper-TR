@@ -8,18 +8,18 @@ namespace GHelper
         Dictionary<string, string> customActions = new Dictionary<string, string>
         {
           {"","--------------" },
-          {"mute", "Volume Mute"},
-          {"screenshot", "Screenshot"},
-          {"play", "Play/Pause"},
+          {"mute", "Sustur"},
+          {"screenshot", "PrntScrn"},
+          {"play", "Başlat/Durdur"},
           {"aura", "Aura"},
-          {"ghelper", "Open GHelper"},
-          {"custom", "Custom"}
+          {"ghelper", "GHelper'i Aç"},
+          {"custom", "Özel Komut"}
         };
 
         private void SetKeyCombo(ComboBox combo, TextBox txbox, string name)
         {
             if (name == "m4")
-                customActions[""] = "Performance";
+                customActions[""] = "Perf Modunu Değiştir";
 
             if (name == "fnf4")
             {

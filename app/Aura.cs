@@ -66,20 +66,20 @@ namespace GHelper
         {
             return new Dictionary<int, string>
             {
-                { 0, "Slow" },
+                { 0, "Yavaş" },
                 { 1, "Normal" },
-                { 2, "Fast" }
+                { 2, "Hızlı" }
             };
         }
         public static Dictionary<int, string> GetModes()
         {
             return new Dictionary<int, string>
             {
-                { 0, "Static" },
-                { 1, "Breathe" },
-                { 2, "Color Cycle" },
-                { 3, "Rainbow" },
-                { 10, "Strobe" },
+                { 0, "Sabit" },
+                { 1, "Nefes" },
+                { 2, "Renk Geçişi" },
+                { 3, "GökKuşağı" },
+                { 10, "Flaş" },
             };
         }
 

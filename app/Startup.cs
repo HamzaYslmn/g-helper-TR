@@ -5,7 +5,7 @@ using System.Security.Principal;
 public class Startup
 {
 
-    static string taskName = "GHelper";
+    static string taskName = "GHelperTR";
 
     public static bool IsScheduled()
     {
@@ -23,8 +23,10 @@ public class Startup
         var userId = WindowsIdentity.GetCurrent().Name;
 
         TaskDefinition td = TaskService.Instance.NewTask();
-        td.RegistrationInfo.Description = "GHelper Auto Start";
-        td.Triggers.Add(new LogonTrigger { UserId = userId });
+
+        td.RegistrationInfo.Description = "GHelperTR Otomatik Başlatma";
+        var trigger = new LogonTrigger { UserId = userId, Delay = TimeSpan.FromSeconds(15) }; // 15 saniye gecikme
+        td.Triggers.Add(trigger);
         td.Actions.Add(strExeFilePath);
 
         td.Settings.StopIfGoingOnBatteries = false;

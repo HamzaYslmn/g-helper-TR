@@ -351,7 +351,7 @@ namespace GHelper
             buttonQuit.Secondary = true;
             buttonQuit.Size = new Size(185, 44);
             buttonQuit.TabIndex = 18;
-            buttonQuit.Text = "Quit";
+            buttonQuit.Text = "Çıkış";
             buttonQuit.UseVisualStyleBackColor = false;
             // 
             // checkStartup
@@ -362,7 +362,7 @@ namespace GHelper
             checkStartup.Name = "checkStartup";
             checkStartup.Size = new Size(206, 36);
             checkStartup.TabIndex = 17;
-            checkStartup.Text = "Run on Startup";
+            checkStartup.Text = "Başlangıçta Çalıştır";
             checkStartup.UseVisualStyleBackColor = true;
             // 
             // panelPerformance
@@ -458,7 +458,7 @@ namespace GHelper
             buttonSilent.Secondary = false;
             buttonSilent.Size = new Size(185, 120);
             buttonSilent.TabIndex = 0;
-            buttonSilent.Text = "Silent";
+            buttonSilent.Text = "Sessiz";
             buttonSilent.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonSilent.UseVisualStyleBackColor = false;
             // 
@@ -480,7 +480,7 @@ namespace GHelper
             buttonBalanced.Secondary = false;
             buttonBalanced.Size = new Size(185, 120);
             buttonBalanced.TabIndex = 1;
-            buttonBalanced.Text = "Balanced";
+            buttonBalanced.Text = "Dengeli";
             buttonBalanced.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonBalanced.UseVisualStyleBackColor = false;
             // 
@@ -523,7 +523,7 @@ namespace GHelper
             buttonFans.Secondary = true;
             buttonFans.Size = new Size(185, 120);
             buttonFans.TabIndex = 35;
-            buttonFans.Text = "Fans + Power";
+            buttonFans.Text = "Fan + Güç";
             buttonFans.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonFans.UseVisualStyleBackColor = false;
             // 
@@ -574,7 +574,7 @@ namespace GHelper
             labelGPU.Name = "labelGPU";
             labelGPU.Size = new Size(136, 32);
             labelGPU.TabIndex = 18;
-            labelGPU.Text = "GPU Mode";
+            labelGPU.Text = "GPU Modu";
             // 
             // labelGPUFan
             // 
@@ -650,7 +650,7 @@ namespace GHelper
             buttonStandard.Secondary = false;
             buttonStandard.Size = new Size(185, 120);
             buttonStandard.TabIndex = 1;
-            buttonStandard.Text = "Standard";
+            buttonStandard.Text = "Standart";
             buttonStandard.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonStandard.UseVisualStyleBackColor = false;
             // 
@@ -672,7 +672,7 @@ namespace GHelper
             buttonOptimized.Secondary = false;
             buttonOptimized.Size = new Size(185, 120);
             buttonOptimized.TabIndex = 3;
-            buttonOptimized.Text = "Optimized";
+            buttonOptimized.Text = "Otomatik";
             buttonOptimized.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonOptimized.UseVisualStyleBackColor = false;
             // 
@@ -773,7 +773,7 @@ namespace GHelper
             buttonScreenAuto.Secondary = false;
             buttonScreenAuto.Size = new Size(185, 72);
             buttonScreenAuto.TabIndex = 0;
-            buttonScreenAuto.Text = "Auto";
+            buttonScreenAuto.Text = "Otomatik";
             buttonScreenAuto.UseVisualStyleBackColor = false;
             // 
             // button60Hz
@@ -855,7 +855,7 @@ namespace GHelper
             labelSreen.Name = "labelSreen";
             labelSreen.Size = new Size(176, 32);
             labelSreen.TabIndex = 21;
-            labelSreen.Text = "Laptop Screen";
+            labelSreen.Text = "Laptop Ekranı";
             // 
             // panelKeyboard
             // 
@@ -958,7 +958,7 @@ namespace GHelper
             buttonKeyboardColor.Secondary = false;
             buttonKeyboardColor.Size = new Size(249, 44);
             buttonKeyboardColor.TabIndex = 39;
-            buttonKeyboardColor.Text = "Color";
+            buttonKeyboardColor.Text = "Renk";
             buttonKeyboardColor.UseVisualStyleBackColor = false;
             // 
             // buttonKeyboard
@@ -976,7 +976,7 @@ namespace GHelper
             buttonKeyboard.Secondary = true;
             buttonKeyboard.Size = new Size(249, 44);
             buttonKeyboard.TabIndex = 37;
-            buttonKeyboard.Text = "Extra";
+            buttonKeyboard.Text = "Ek Ayarlar";
             buttonKeyboard.UseVisualStyleBackColor = false;
             // 
             // pictureKeyboard
@@ -999,7 +999,7 @@ namespace GHelper
             labelKeyboard.Name = "labelKeyboard";
             labelKeyboard.Size = new Size(210, 32);
             labelKeyboard.TabIndex = 32;
-            labelKeyboard.Text = "Laptop Keyboard";
+            labelKeyboard.Text = "Laptop Klavyesi";
             // 
             // SettingsForm
             // 
@@ -1024,7 +1024,7 @@ namespace GHelper
             Padding = new Padding(10);
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "G-Helper";
+            Text = "G-Helper-TR";
             Load += Settings_Load;
             panelMatrix.ResumeLayout(false);
             panelMatrix.PerformLayout();

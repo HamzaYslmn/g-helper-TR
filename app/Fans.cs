@@ -27,14 +27,14 @@ namespace GHelper
             string title;
 
             if (device == 1)
-                title = "GPU Fan Profile";
+                title = "GPU Fan Profili";
             else if (device == 2)
-                title = "Middle Fan Profile";
+                title = "Orta Fan Profili";
             else
-                title = "CPU Fan Profile";
+                title = "CPU Fan Profili";
 
             if (Program.settingsForm.perfName.Length > 0)
-                labelFans.Text = "Fan Profiles: " + Program.settingsForm.perfName;
+                labelFans.Text = "Fan Profili: " + Program.settingsForm.perfName;
 
             chart.Titles[0].Text = title;
 
@@ -140,7 +140,7 @@ namespace GHelper
             checkApplyPower.Click += CheckApplyPower_Click;
 
             //labelInfo.MaximumSize = new Size(280, 0);
-            labelInfo.Text = "Power Limits (PPT) is\nexperimental feature.\n\nUse carefully and\non your own risk!";
+            labelInfo.Text = "Güç Sınırlama (PPT)\ndeneysel bir özelliktir.\n\nDikkatli Kullanın\nRisk size aittir!";
 
             InitFans();
             InitPower();
@@ -266,12 +266,12 @@ namespace GHelper
             if (applied)
             {
                 labelApplied.ForeColor = colorStandard;
-                labelApplied.Text = "Applied";
+                labelApplied.Text = "Aktif";
             }
             else
             {
                 labelApplied.ForeColor = colorTurbo;
-                labelApplied.Text = "Not Applied";
+                labelApplied.Text = "Deaktif";
 
             }
         }

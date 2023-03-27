@@ -73,13 +73,13 @@ namespace GHelper
             groupBox1.Size = new Size(756, 242);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Key Bindings";
+            groupBox1.Text = "Tuş Atamaları";
             // 
             // textFNF4
             // 
             textFNF4.Location = new Point(411, 176);
             textFNF4.Name = "textFNF4";
-            textFNF4.PlaceholderText = "action";
+            textFNF4.PlaceholderText = "CMD komut";
             textFNF4.Size = new Size(320, 39);
             textFNF4.TabIndex = 8;
             // 
@@ -104,7 +104,7 @@ namespace GHelper
             // 
             textM4.Location = new Point(411, 113);
             textM4.Name = "textM4";
-            textM4.PlaceholderText = "action";
+            textM4.PlaceholderText = "CMD komut";
             textM4.Size = new Size(320, 39);
             textM4.TabIndex = 5;
             // 
@@ -166,7 +166,7 @@ namespace GHelper
             groupLight.Size = new Size(756, 304);
             groupLight.TabIndex = 1;
             groupLight.TabStop = false;
-            groupLight.Text = "Keyboard Backlight";
+            groupLight.Text = "Klavye Aydınlatması";
             // 
             // labelSpeed
             // 
@@ -175,7 +175,7 @@ namespace GHelper
             labelSpeed.Name = "labelSpeed";
             labelSpeed.Size = new Size(198, 32);
             labelSpeed.TabIndex = 40;
-            labelSpeed.Text = "Animation Speed";
+            labelSpeed.Text = "Animasyon Hızı";
             // 
             // comboKeyboardSpeed
             // 
@@ -200,7 +200,7 @@ namespace GHelper
             checkShutdown.Name = "checkShutdown";
             checkShutdown.Size = new Size(154, 36);
             checkShutdown.TabIndex = 3;
-            checkShutdown.Text = "Shutdown";
+            checkShutdown.Text = "Kapanırken";
             checkShutdown.UseVisualStyleBackColor = true;
             // 
             // checkSleep
@@ -210,7 +210,7 @@ namespace GHelper
             checkSleep.Name = "checkSleep";
             checkSleep.Size = new Size(105, 36);
             checkSleep.TabIndex = 2;
-            checkSleep.Text = "Sleep";
+            checkSleep.Text = "Uykuda";
             checkSleep.UseVisualStyleBackColor = true;
             // 
             // checkBoot
@@ -220,7 +220,7 @@ namespace GHelper
             checkBoot.Name = "checkBoot";
             checkBoot.Size = new Size(96, 36);
             checkBoot.TabIndex = 1;
-            checkBoot.Text = "Boot";
+            checkBoot.Text = "Açılışta";
             checkBoot.UseVisualStyleBackColor = true;
             // 
             // checkAwake
@@ -230,7 +230,7 @@ namespace GHelper
             checkAwake.Name = "checkAwake";
             checkAwake.Size = new Size(115, 36);
             checkAwake.TabIndex = 0;
-            checkAwake.Text = "Awake";
+            checkAwake.Text = "Cihaz Açıkken";
             checkAwake.UseVisualStyleBackColor = true;
             // 
             // groupOther
@@ -244,7 +244,7 @@ namespace GHelper
             groupOther.Size = new Size(756, 225);
             groupOther.TabIndex = 2;
             groupOther.TabStop = false;
-            groupOther.Text = "Other";
+            groupOther.Text = "Diğer";
             // 
             // checkKeyboardAuto
             // 
@@ -253,7 +253,7 @@ namespace GHelper
             checkKeyboardAuto.Name = "checkKeyboardAuto";
             checkKeyboardAuto.Size = new Size(712, 36);
             checkKeyboardAuto.TabIndex = 2;
-            checkKeyboardAuto.Text = "Lower backlight brightness on battery and back when plugged";
+            checkKeyboardAuto.Text = "Pildeyken klavye parlaklığını düşürün ve fişe takılıyken geri alın";
             checkKeyboardAuto.UseVisualStyleBackColor = true;
             // 
             // checkTopmost
@@ -263,7 +263,7 @@ namespace GHelper
             checkTopmost.Name = "checkTopmost";
             checkTopmost.Size = new Size(390, 36);
             checkTopmost.TabIndex = 1;
-            checkTopmost.Text = "Keep app window always on top";
+            checkTopmost.Text = "Uygulama penceresini her zaman üstte tutun";
             checkTopmost.UseVisualStyleBackColor = true;
             // 
             // checkNoOverdrive
@@ -273,7 +273,7 @@ namespace GHelper
             checkNoOverdrive.Name = "checkNoOverdrive";
             checkNoOverdrive.Size = new Size(307, 36);
             checkNoOverdrive.TabIndex = 3;
-            checkNoOverdrive.Text = "Disable screen overdrive";
+            checkNoOverdrive.Text = "Ekran OverDrive(3ms) devre dışı bırak";
             checkNoOverdrive.UseVisualStyleBackColor = true;
             // 
             // Keyboard
@@ -292,7 +292,7 @@ namespace GHelper
             Padding = new Padding(10);
             ShowIcon = false;
             ShowInTaskbar = false;
-            Text = "Extra Settings";
+            Text = "Ek Ayarlar";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupLight.ResumeLayout(false);

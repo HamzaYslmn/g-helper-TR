@@ -126,7 +126,7 @@ namespace GHelper
             comboBoost.BorderColor = Color.White;
             comboBoost.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoost.FormattingEnabled = true;
-            comboBoost.Items.AddRange(new object[] { "Disabled", "Enabled", "Aggressive", "Efficient Enabled", "Efficient Aggressive" });
+            comboBoost.Items.AddRange(new object[] { "Devre Dışı", "Etkin", "Agresif", "Verimli Etkin", "Verimli Agresif" });
             comboBoost.Location = new Point(526, 15);
             comboBoost.Name = "comboBoost";
             comboBoost.Size = new Size(266, 40);
@@ -225,7 +225,7 @@ namespace GHelper
             checkAuto.Name = "checkAuto";
             checkAuto.Size = new Size(165, 36);
             checkAuto.TabIndex = 17;
-            checkAuto.Text = "Auto Apply";
+            checkAuto.Text = "Oto Uygula";
             checkAuto.UseVisualStyleBackColor = true;
             // 
             // buttonReset
@@ -242,7 +242,7 @@ namespace GHelper
             buttonReset.Secondary = true;
             buttonReset.Size = new Size(232, 44);
             buttonReset.TabIndex = 15;
-            buttonReset.Text = "Factory Defaults";
+            buttonReset.Text = "Varsayılana Dön";
             buttonReset.UseVisualStyleBackColor = false;
             // 
             // buttonApply
@@ -259,7 +259,7 @@ namespace GHelper
             buttonApply.Secondary = true;
             buttonApply.Size = new Size(248, 44);
             buttonApply.TabIndex = 14;
-            buttonApply.Text = "Apply Custom Curve";
+            buttonApply.Text = "Fan Eğrisini Uygula";
             buttonApply.UseVisualStyleBackColor = false;
             // 
             // panelPower
@@ -302,7 +302,7 @@ namespace GHelper
             labelPowerLimits.Name = "labelPowerLimits";
             labelPowerLimits.Size = new Size(229, 32);
             labelPowerLimits.TabIndex = 26;
-            labelPowerLimits.Text = "Power Limits (PPT)";
+            labelPowerLimits.Text = "Güç Sınırı (PPT)";
             // 
             // checkApplyPower
             // 
@@ -313,7 +313,7 @@ namespace GHelper
             checkApplyPower.Name = "checkApplyPower";
             checkApplyPower.Size = new Size(165, 36);
             checkApplyPower.TabIndex = 25;
-            checkApplyPower.Text = "Auto Apply";
+            checkApplyPower.Text = "Oto Uygula";
             checkApplyPower.UseVisualStyleBackColor = true;
             // 
             // buttonApplyPower
@@ -330,7 +330,7 @@ namespace GHelper
             buttonApplyPower.Secondary = true;
             buttonApplyPower.Size = new Size(324, 44);
             buttonApplyPower.TabIndex = 24;
-            buttonApplyPower.Text = "Apply Power Limits";
+            buttonApplyPower.Text = "Güç Sınırını Uygula";
             buttonApplyPower.UseVisualStyleBackColor = false;
             // 
             // panelCPU
@@ -478,7 +478,7 @@ namespace GHelper
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Fans and Power";
+            Text = "Fan ve Güç Ayarları";
             panelFans.ResumeLayout(false);
             panelFans.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picturePerf).EndInit();
