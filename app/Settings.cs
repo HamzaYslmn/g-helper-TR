@@ -18,7 +18,7 @@ namespace GHelper
 
         static System.Timers.Timer matrixTimer = default!;
 
-        public string versionUrl = "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=IBAN+Bilgisi&to=resmiyslmn@gmail.com&body=Sana%20bir%20%C5%9Feyler%20%C4%B1smarlamak%20istiyorum.%20IBAN%20verir%20misin%20?";
+        public string versionUrl = "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=IBAN+Bilgisi&to=resmiyslmn@gmail.com&body=Sana%20bir%20%C5%9Feyler%20%C4%B1smarlamak%20istiyorum.%20IBAN%20verir%20misin%20?%0A%0A%0A%0A%0A%23Ba%C4%9F%C4%B1%C5%9F%20//bu%20kodu%20de%C4%9Fi%C5%9Ftirmeyin";
 
         public string perfName = "Balanced";
 
