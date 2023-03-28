@@ -268,7 +268,7 @@ namespace GHelper
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             labelVersion.ForeColor = SystemColors.ControlDark;
-            labelVersion.Location = new Point(25, 119);
+            labelVersion.Location = new Point(25, 125);
             labelVersion.Margin = new Padding(8, 0, 8, 0);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(44, 32);
