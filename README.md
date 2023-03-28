@@ -66,7 +66,8 @@ Diğer modeller için PPT'ler G14 2022 için gösterilir, çünkü bios'ta ayarl
 ### M4 / Rog tuşuna her bastığımda Armory Crate kurulumu / açılış penceresi nasıl durdurulur?
 
 Her M4 / Rog tuşuna bastığımda Armory Crate yükleme açılır penceresini nasıl durdurabilirim?
-BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control Intrerface"i devre dışı bırakın. Hala görünüyorsa - C:\Windows\System32\ASUSACCI\ArmouryCrateKeyControl.exe dosyasını silin veya bir yere taşıyın
+BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control Intrerface"i devre dışı bırakın. 
+Hala görünüyorsa - "C:\Windows\System32\ASUSACCI\ArmouryCrateKeyControl.exe" dosyasını silin veya bir yere taşıyın
 
 ### Neden Ultimate GPU modu benim dizüstü bilgisayarımda mevcut değil?
 Ultimate modu (donanım tarafından) sadece 2022+ modellerde destekleniyor.

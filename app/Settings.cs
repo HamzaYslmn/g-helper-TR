@@ -1327,7 +1327,7 @@ namespace GHelper
             //Debug.WriteLine(limit);
 
             labelBatteryTitle.Text = "Batarya Şarj Sınırı: " + limit.ToString() + "%";
-            trackBattery.Value = limit;
+            sliderBattery.Value = limit;
 
             Program.wmi.DeviceSet(ASUSWmi.BatteryLimit, limit);
             Program.config.setConfig("charge_limit", limit);
