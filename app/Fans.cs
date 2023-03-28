@@ -165,7 +165,7 @@ namespace GHelper
             if (Program.config.getConfigPerf("auto_boost") != comboBoost.SelectedIndex)
             {
                 NativeMethods.SetCPUBoost(comboBoost.SelectedIndex);
-                Program.config.setConfigPerf("auto_boost", comboBoost.SelectedIndex);
+                Program.config.setConfigPerf("auto_boost", comboBoost.SelectedIndex); 
             }
         }
 
