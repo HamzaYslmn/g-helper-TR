@@ -932,7 +932,6 @@ namespace GHelper
                     labelPerf.Text = "Performans Modu +";
             }
             else
-            {
                 labelPerf.Text = "Performans Modu";
             }
 
