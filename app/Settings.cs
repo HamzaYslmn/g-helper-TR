@@ -942,7 +942,7 @@ namespace GHelper
             {
                 case ASUSWmi.PerformanceSilent:
                     buttonSilent.Activated = true;
-                    perfName = "Silent";
+                    perfName = "Sessiz";
                     break;
                 case ASUSWmi.PerformanceTurbo:
                     buttonTurbo.Activated = true;
@@ -951,7 +951,7 @@ namespace GHelper
                 default:
                     buttonBalanced.Activated = true;
                     PerformanceMode = ASUSWmi.PerformanceBalanced;
-                    perfName = "Balanced";
+                    perfName = "Dengeli";
                     break;
             }
 
