@@ -164,7 +164,7 @@ namespace GHelper
             if (Program.config.getConfigPerf("auto_boost") != comboBoost.SelectedIndex)
             {
                 NativeMethods.SetCPUBoost(comboBoost.SelectedIndex);
-                Program.config.setConfigPerf("auto_boost", comboBoost.SelectedIndex); 
+                Program.config.setConfigPerf("auto_boost", comboBoost.SelectedIndex);
             }
         }
 
@@ -276,21 +276,6 @@ namespace GHelper
             InitPower(true);
         }
 
-
-        public void ApplyLabel(bool applied = false)
-        {
-            if (applied)
-            {
-                labelApplied.ForeColor = colorStandard;
-                labelApplied.Text = "Aktif";
-            }
-            else
-            {
-                labelApplied.ForeColor = colorTurbo;
-                labelApplied.Text = "Deaktif";
-
-            }
-        }
 
         public void InitFans()
         {
