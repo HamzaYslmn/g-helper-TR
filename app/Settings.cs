@@ -120,10 +120,6 @@ namespace GHelper
             aTimer = new System.Timers.Timer(1000);
             aTimer.Elapsed += OnTimedEvent;
 
-            // Subscribing for monitor power on events
-            var settingGuid = new NativeMethods.PowerSettingGuid();
-            Program.unRegPowerNotify = NativeMethods.RegisterPowerSettingNotification(Handle, settingGuid.ConsoleDisplayState, NativeMethods.DEVICE_NOTIFY_WINDOW_HANDLE);
-
             SetVersionLabel("[₺] Sürüm: " + Assembly.GetExecutingAssembly().GetName().Version);
 
             string model = Program.config.GetModel();
@@ -1048,7 +1044,11 @@ namespace GHelper
             var Plugged = SystemInformation.PowerStatus.PowerLineStatus;
 
             bool GpuAuto = Program.config.getConfig("gpu_auto") == 1;
-            if (!GpuAuto) return false;
+            bool ForceGPU = Program.config.ContainsModel("503");
+
+            int GpuMode = Program.config.getConfig("gpu_mode");
+
+            if (!GpuAuto && !ForceGPU) return false;
 
             int eco = Program.wmi.DeviceGet(ASUSWmi.GPUEco);
             int mux = Program.wmi.DeviceGet(ASUSWmi.GPUMux);
@@ -1057,16 +1057,18 @@ namespace GHelper
                 return false;
             else
             {
-                if (eco == 1 && Plugged == PowerLineStatus.Online)  // Eco going Standard on plugged
-                {
-                    SetEcoGPU(0);
-                    return true;
-                }
-                else if (eco == 0 && Plugged != PowerLineStatus.Online)  // Standard going Eco on plugged
-                {
-                    SetEcoGPU(1);
-                    return true;
-                }
+                if (eco == 1)
+                    if ((GpuAuto && Plugged == PowerLineStatus.Online) || (ForceGPU && GpuMode == ASUSWmi.GPUModeStandard))
+                    {
+                        SetEcoGPU(0);
+                        return true;
+                    }
+                if (eco == 0)
+                    if ((GpuAuto && Plugged != PowerLineStatus.Online) || (ForceGPU && GpuMode == ASUSWmi.GPUModeEco))
+                    {
+                        SetEcoGPU(1);
+                        return true;
+                    }
             }
 
             return false;
@@ -1095,8 +1097,8 @@ namespace GHelper
             int eco = Program.wmi.DeviceGet(ASUSWmi.GPUEco);
             int mux = Program.wmi.DeviceGet(ASUSWmi.GPUMux);
 
-            //Logger.WriteLine("Eco flag : " + eco);
-            //Logger.WriteLine("Mux flag : " + mux);
+            Logger.WriteLine("Eco flag : " + eco);
+            Logger.WriteLine("Mux flag : " + mux);
 
             int GpuMode;
 
