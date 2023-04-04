@@ -89,11 +89,11 @@ namespace GHelper
             string title;
 
             if (device == 1)
-                title = "GPU Fan Profile";
+                title = "GPU Fan Profili";
             else if (device == 2)
-                title = "Middle Fan Profile";
+                title = "Orta Fan Profili";
             else
-                title = "CPU Fan Profile";
+                title = "CPU Fan Profili";
 
             if (Program.settingsForm.perfName.Length > 0)
                 labelFans.Text = "Fan Profiles: " + Program.settingsForm.perfName;
