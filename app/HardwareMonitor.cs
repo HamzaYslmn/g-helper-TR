@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using GHelper;
+﻿using GHelper;
 using GHelper.Gpu;
+using System.Diagnostics;
 
 public static class HardwareMonitor
 {
@@ -13,6 +13,9 @@ public static class HardwareMonitor
     public static string? cpuFan;
     public static string? gpuFan;
     public static string? midFan;
+
+    //public static List<int> gpuUsage = new List<int>();
+    public static int? gpuUse;
 
     public static int GetFanMax()
     {
@@ -41,13 +44,29 @@ public static class HardwareMonitor
         if (Program.config.getConfig("fan_rpm") == 1)
             return " Fan: " + (fan * 100).ToString() + "RPM";
         else
-            return " Fan: " + Math.Min(Math.Round((float)fan/fanMax*100), 100).ToString() + "%"; // relatively to 6000 rpm
+            return " Fan: " + Math.Min(Math.Round((float)fan / fanMax * 100), 100).ToString() + "%"; // relatively to 6000 rpm
+    }
+
+    private static int GetGpuUse()
+    {
+        try
+        {
+            int? gpuUse = GpuTemperatureProvider?.GetGpuUse();
+            if (gpuUse is not null) return (int)gpuUse;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.ToString());
+        }
+
+        return 0;
     }
 
     public static void ReadSensors()
     {
         batteryDischarge = -1;
         gpuTemp = -1;
+        gpuUse = -1;
 
         cpuFan = FormatFan(Program.wmi.DeviceGet(ASUSWmi.CPU_Fan));
         gpuFan = FormatFan(Program.wmi.DeviceGet(ASUSWmi.GPU_Fan));
@@ -55,31 +74,36 @@ public static class HardwareMonitor
 
         cpuTemp = Program.wmi.DeviceGet(ASUSWmi.Temp_CPU);
 
-
         if (cpuTemp < 0) try
         {
             var ct = new PerformanceCounter("Thermal Zone Information", "Temperature", @"\_TZ.THRM", true);
             cpuTemp = ct.NextValue() - 273;
             ct.Dispose();
-        } catch
+        }
+        catch
         {
-            Logger.WriteLine("Failed reading CPU temp");
+            Debug.WriteLine("Failed reading CPU temp");
         }
 
-        if (gpuTemp < 0)  try
+        try
         {
-           gpuTemp = GpuTemperatureProvider?.GetCurrentTemperature();
+            gpuTemp = GpuTemperatureProvider?.GetCurrentTemperature();
 
         }
-        catch (Exception ex) {
+        catch (Exception ex)
+        {
             gpuTemp = -1;
-            Logger.WriteLine("Failed reading GPU temp");
-            Logger.WriteLine(ex.ToString());
+            Debug.WriteLine("Failed reading GPU temp");
+            Debug.WriteLine(ex.ToString());
         }
 
         if (gpuTemp is null || gpuTemp < 0)
             gpuTemp = Program.wmi.DeviceGet(ASUSWmi.Temp_GPU);
 
+        /*
+        gpuUsage.Add(GetGpuUse());
+        if (gpuUsage.Count > 3) gpuUsage.RemoveAt(0);
+        */
 
         try
         {
@@ -90,15 +114,22 @@ public static class HardwareMonitor
         }
         catch
         {
-            Logger.WriteLine("Failed reading Battery discharge");
+            Debug.WriteLine("Failed reading Battery discharge");
         }
     }
 
-    public static void RecreateGpuTemperatureProviderWithDelay() {
+    public static bool IsUsedGPU(int threshold = 50)
+    {
+        return (GetGpuUse() > threshold);
+    }
+
+    public static void RecreateGpuTemperatureProviderWithDelay()
+    {
 
         // Re-enabling the discrete GPU takes a bit of time,
         // so a simple workaround is to refresh again after that happens
-        Task.Run(async () => {
+        Task.Run(async () =>
+        {
             await Task.Delay(TimeSpan.FromSeconds(5));
             RecreateGpuTemperatureProvider();
         });
@@ -107,7 +138,8 @@ public static class HardwareMonitor
 
     }
 
-    public static void RecreateGpuTemperatureProvider() {
+    public static void RecreateGpuTemperatureProvider()
+    {
         try
         {
             GpuTemperatureProvider?.Dispose();
@@ -134,8 +166,8 @@ public static class HardwareMonitor
             GpuTemperatureProvider = null;
         }
         catch (Exception ex)
-        { 
+        {
             Debug.WriteLine(ex.ToString());
-        } 
+        }
     }
 }
