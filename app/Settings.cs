@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.Reflection;
 using System.Text.Json;
 using System.Timers;
+using Tools;
 
 namespace GHelper
 {
@@ -26,6 +27,9 @@ namespace GHelper
 
         static AnimeMatrixDevice mat;
         static long lastRefresh;
+
+        private bool customFans = false;
+        private int customPower = 0;
 
         public SettingsForm()
         {
@@ -185,13 +189,13 @@ namespace GHelper
 
         private static void TrayIcon_MouseMove(object? sender, MouseEventArgs e)
         {
-            RefreshSensors();
+            Program.settingsForm.RefreshSensors();
         }
 
 
         private static void OnTimedEvent(Object? source, ElapsedEventArgs? e)
         {
-            RefreshSensors();
+            Program.settingsForm.RefreshSensors();
         }
 
         private void Button120Hz_MouseHover(object? sender, EventArgs e)
@@ -279,6 +283,9 @@ namespace GHelper
                         }
                     }
                     m.Result = (IntPtr)1;
+                    break;
+                case KeyHandler.WM_HOTKEY_MSG_ID:
+                    CyclePerformanceMode();
                     break;
             }
             base.WndProc(ref m);
@@ -795,7 +802,7 @@ namespace GHelper
         }
 
 
-        private static void RefreshSensors(bool force = false)
+        private void RefreshSensors(bool force = false)
         {
 
             if (!force && Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastRefresh) < 2000) return;
@@ -820,18 +827,19 @@ namespace GHelper
 
             Program.settingsForm.BeginInvoke(delegate
             {
-                Program.settingsForm.labelCPUFan.Text = "CPU" + cpuTemp + HardwareMonitor.cpuFan;
-                Program.settingsForm.labelGPUFan.Text = "GPU" + gpuTemp + HardwareMonitor.gpuFan;
+                labelCPUFan.Text = "CPU" + cpuTemp + HardwareMonitor.cpuFan;
+                labelGPUFan.Text = "GPU" + gpuTemp + HardwareMonitor.gpuFan;
                 if (HardwareMonitor.midFan is not null)
-                    Program.settingsForm.labelMidFan.Text = "Mid" + HardwareMonitor.midFan;
+                    labelMidFan.Text = "Mid" + HardwareMonitor.midFan;
 
-                Program.settingsForm.labelBattery.Text = battery;
-
-                Program.trayIcon.Text = "CPU" + cpuTemp + HardwareMonitor.cpuFan + "\n"
-                                        + "GPU" + gpuTemp + HardwareMonitor.gpuFan +
-                                        ((battery.Length > 0) ? ("\n" + battery) : "");
-
+                labelBattery.Text = battery;
             });
+
+
+            Program.trayIcon.Text = "CPU" + cpuTemp + HardwareMonitor.cpuFan + "\n"
+                                    + "GPU" + gpuTemp + HardwareMonitor.gpuFan +
+                                    ((battery.Length > 0) ? ("\n" + battery) : "");
+
         }
 
 
@@ -853,6 +861,12 @@ namespace GHelper
             }
         }
 
+
+        private void SetPerformanceLabel()
+        {
+            labelPerf.Text = "Performance Mode" + (customFans?"+":"") + ((customPower > 0) ? " "+customPower+"W" : "");
+        }
+
         public void SetPower()
         {
             int limit_total = Program.config.getConfigPerf("limit_total");
@@ -865,16 +879,25 @@ namespace GHelper
             if (limit_cpu < ASUSWmi.MinCPU) return;
 
             if (Program.wmi.DeviceGet(ASUSWmi.PPT_TotalA0) >= 0)
+            {
                 Program.wmi.DeviceSet(ASUSWmi.PPT_TotalA0, limit_total, "PowerLimit A");
+                customPower = limit_total;
+            }
 
             if (Program.wmi.DeviceGet(ASUSWmi.PPT_CPUB0) >= 0)
+            {
                 Program.wmi.DeviceSet(ASUSWmi.PPT_CPUB0, limit_cpu, "PowerLimit B");
+                customPower = limit_cpu;
+            }
+
+            Program.settingsForm.BeginInvoke(SetPerformanceLabel);
 
         }
 
 
         public void AutoFans()
         {
+            customFans = false;
 
             if (Program.config.getConfigPerf("auto_apply") == 1)
             {
@@ -890,15 +913,18 @@ namespace GHelper
                     Logger.WriteLine("Driver rejected fan curve, resetting mode to " + mode);
                     Program.wmi.DeviceSet(ASUSWmi.PerformanceMode, mode, "PerformanceMode");
                 }
-                else
-                    labelPerf.Text = "Performans Modu +";
+                else customFans = true;
             }
-            else
-                labelPerf.Text = "Performans Modu";
-            }
+
+            Program.settingsForm.BeginInvoke(SetPerformanceLabel);
+
+        }
 
         public void AutoPower(int delay = 0)
         {
+
+            customPower = 0;
+
             if (Program.config.getConfigPerf("auto_apply_power") == 1)
             {
                 if (delay > 0)
@@ -988,15 +1014,19 @@ namespace GHelper
                 fans.InitPower();
                 fans.InitBoost();
             }
-
-
-
         }
 
 
         public void CyclePerformanceMode()
         {
-            SetPerformanceMode(Program.config.getConfig("performance_mode") + 1, true);
+            int mode = Program.config.getConfig("performance_mode");
+
+            if (Control.ModifierKeys == Keys.Shift)
+                mode = (mode == 0) ? 2 : mode - 1;
+            else
+                mode++;
+
+            SetPerformanceMode(mode, true);
         }
 
 
