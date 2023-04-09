@@ -96,7 +96,7 @@ namespace GHelper
                 title = "CPU Fan Profili";
 
             if (Program.settingsForm.perfName.Length > 0)
-                labelFans.Text = "Fan Profiles: " + Program.settingsForm.perfName;
+                labelFans.Text = "Fan Profili: " + Program.settingsForm.perfName;
 
             chart.Titles[0].Text = title;
 
