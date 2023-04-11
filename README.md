@@ -1,6 +1,6 @@
 # PROJE SONLANDI, Türkçe Dil desteği geldi. 
 
-Eklediğim optimizasyonları da geliştirici uygulamaya ekledi.
+Eklediğim optimizasyonları da geliştirici uygulamaya ekledi. @hkaancaliskan çeviriyi sağlamış. Yani önceki gibi artık benim çevirim olmayacak.
 https://github.com/seerge/g-helper
 
 
