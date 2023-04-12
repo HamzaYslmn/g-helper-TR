@@ -334,7 +334,7 @@
     <value>Overdrive</value>
   </data>
   <data name="PerformanceMode" xml:space="preserve">
-    <value>Perf Modunu Değiştir</value>
+    <value>Performans Modu</value>
   </data>
   <data name="PictureGif" xml:space="preserve">
     <value>Resim / Gif</value>
