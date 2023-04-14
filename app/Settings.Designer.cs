@@ -202,10 +202,10 @@ namespace GHelper
             buttonMatrix.FlatAppearance.BorderSize = 0;
             buttonMatrix.FlatStyle = FlatStyle.Flat;
             buttonMatrix.Location = new Point(518, 8);
-            buttonMatrix.Margin = new Padding(4, 8, 4, 8);
+            buttonMatrix.Margin = new Padding(4, 7, 4, 7);
             buttonMatrix.Name = "buttonMatrix";
             buttonMatrix.Secondary = true;
-            buttonMatrix.Size = new Size(249, 44);
+            buttonMatrix.Size = new Size(249, 45);
             buttonMatrix.TabIndex = 43;
             buttonMatrix.Text = Properties.Strings.PictureGif;
             buttonMatrix.UseVisualStyleBackColor = false;
@@ -380,7 +380,7 @@ namespace GHelper
             picturePerf.BackgroundImage = (Image)resources.GetObject("picturePerf.BackgroundImage");
             picturePerf.BackgroundImageLayout = ImageLayout.Zoom;
             picturePerf.InitialImage = null;
-            picturePerf.Location = new Point(24, 20);
+            picturePerf.Location = new Point(24, 18);
             picturePerf.Margin = new Padding(4);
             picturePerf.Name = "picturePerf";
             picturePerf.Size = new Size(32, 32);
@@ -402,7 +402,7 @@ namespace GHelper
             // 
             labelCPUFan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelCPUFan.Cursor = Cursors.Hand;
-            labelCPUFan.Location = new Point(384, 15);
+            labelCPUFan.Location = new Point(384, 18);
             labelCPUFan.Margin = new Padding(8, 0, 8, 0);
             labelCPUFan.Name = "labelCPUFan";
             labelCPUFan.Size = new Size(400, 36);
@@ -900,7 +900,7 @@ namespace GHelper
             comboKeyboard.Location = new Point(4, 10);
             comboKeyboard.Margin = new Padding(4, 10, 4, 8);
             comboKeyboard.Name = "comboKeyboard";
-            comboKeyboard.Size = new Size(249, 40);
+            comboKeyboard.Size = new Size(249, 44);
             comboKeyboard.TabIndex = 35;
             comboKeyboard.TabStop = false;
             // 
@@ -912,15 +912,15 @@ namespace GHelper
             panelColor.Controls.Add(buttonKeyboardColor);
             panelColor.Dock = DockStyle.Fill;
             panelColor.Location = new Point(261, 8);
-            panelColor.Margin = new Padding(4, 8, 4, 8);
+            panelColor.Margin = new Padding(4, 7, 4, 7);
             panelColor.Name = "panelColor";
-            panelColor.Size = new Size(249, 44);
+            panelColor.Size = new Size(249, 45);
             panelColor.TabIndex = 36;
             // 
             // pictureColor2
             // 
             pictureColor2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureColor2.Location = new Point(188, 12);
+            pictureColor2.Location = new Point(188, 13);
             pictureColor2.Margin = new Padding(8);
             pictureColor2.Name = "pictureColor2";
             pictureColor2.Size = new Size(20, 20);
@@ -930,7 +930,7 @@ namespace GHelper
             // pictureColor
             // 
             pictureColor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureColor.Location = new Point(215, 12);
+            pictureColor.Location = new Point(215, 13);
             pictureColor.Margin = new Padding(8);
             pictureColor.Name = "pictureColor";
             pictureColor.Size = new Size(20, 20);
@@ -947,10 +947,10 @@ namespace GHelper
             buttonKeyboardColor.FlatStyle = FlatStyle.Flat;
             buttonKeyboardColor.ForeColor = SystemColors.ControlText;
             buttonKeyboardColor.Location = new Point(0, 0);
-            buttonKeyboardColor.Margin = new Padding(4, 8, 4, 8);
+            buttonKeyboardColor.Margin = new Padding(4, 7, 4, 7);
             buttonKeyboardColor.Name = "buttonKeyboardColor";
             buttonKeyboardColor.Secondary = false;
-            buttonKeyboardColor.Size = new Size(249, 44);
+            buttonKeyboardColor.Size = new Size(249, 45);
             buttonKeyboardColor.TabIndex = 39;
             buttonKeyboardColor.Text = Properties.Strings.Color;
             buttonKeyboardColor.UseVisualStyleBackColor = false;
@@ -965,10 +965,10 @@ namespace GHelper
             buttonKeyboard.FlatAppearance.BorderSize = 0;
             buttonKeyboard.FlatStyle = FlatStyle.Flat;
             buttonKeyboard.Location = new Point(518, 8);
-            buttonKeyboard.Margin = new Padding(4, 8, 4, 8);
+            buttonKeyboard.Margin = new Padding(4, 7, 4, 7);
             buttonKeyboard.Name = "buttonKeyboard";
             buttonKeyboard.Secondary = true;
-            buttonKeyboard.Size = new Size(249, 44);
+            buttonKeyboard.Size = new Size(249, 45);
             buttonKeyboard.TabIndex = 37;
             buttonKeyboard.Text = Properties.Strings.Extra;
             buttonKeyboard.UseVisualStyleBackColor = false;
@@ -988,7 +988,7 @@ namespace GHelper
             // 
             labelKeyboard.AutoSize = true;
             labelKeyboard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelKeyboard.Location = new Point(60, 13);
+            labelKeyboard.Location = new Point(60, 14);
             labelKeyboard.Margin = new Padding(8, 0, 8, 0);
             labelKeyboard.Name = "labelKeyboard";
             labelKeyboard.Size = new Size(210, 32);

@@ -873,6 +873,7 @@ namespace GHelper
 
         public void SetPower()
         {
+
             int limit_total = Program.config.getConfigPerf("limit_total");
             int limit_cpu = Program.config.getConfigPerf("limit_cpu");
 
@@ -900,11 +901,11 @@ namespace GHelper
         }
 
 
-        public void AutoFans()
+        public void AutoFans(bool force = false)
         {
             customFans = false;
 
-            if (Program.config.getConfigPerf("auto_apply") == 1)
+            if (Program.config.getConfigPerf("auto_apply") == 1 || force)
             {
                 int cpuResult = Program.wmi.SetFanCurve(0, Program.config.getFanConfig(0));
                 int gpuResult = Program.wmi.SetFanCurve(1, Program.config.getFanConfig(1));
@@ -940,6 +941,13 @@ namespace GHelper
 
         public void AutoPower(int delay = 0)
         {
+
+            // fix for misbehaving bios PPTs on G513
+            if (Program.config.ContainsModel("G513") && Program.config.getConfigPerf("auto_apply") != 1)
+            {
+                AutoFans(true);
+                delay = 500;
+            }
 
             customPower = 0;
 
