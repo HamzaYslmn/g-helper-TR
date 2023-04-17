@@ -2,6 +2,8 @@
 
 [![Github all releases](https://img.shields.io/github/downloads/seerge/g-helper/total.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub release](https://img.shields.io/github/release/seerge/g-helper.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub stars](https://img.shields.io/github/stars/seerge/g-helper.svg?style=social&label=Star)](https://GitHub.com/seerge/g-helper/stargazers/)
 
+语言: [English](https://github.com/seerge/g-helper#readme) | 中文
+
 ## 为ASUS笔记本打造的、Armoury Crate(奥创控制中心)的轻量化替代品
 ### 可作为ROG 幻14、幻15，幻13、幻16，飞行堡垒/天选系列，ROG 枪神/魔霸系列或其他ASUS笔记本的控制工具
 
@@ -17,7 +19,7 @@
 
 ## [:floppy_disk: 下载应用](https://github.com/seerge/g-helper/releases/latest/download/GHelper.zip)
 
-如果你喜欢这个应用，请给这个项目 [:star: 在Github上Star](https://github.com/seerge/g-helper) 或者向别人推荐它！
+如果你喜欢这个应用，请[给这个项目:star:](https://github.com/seerge/g-helper) 或者向别人推荐它！
 
 _如果你在别的地方提到这个软件-请记得加上这个项目的网址。十分感谢。_
 
