@@ -1,147 +1,195 @@
-# PROJE SONLANDI, Türkçe Dil desteği geldi. 
+# G-Helper (GHelper)
 
-Eklediğim optimizasyonları da geliştirici uygulamaya ekledi. @hkaancaliskan çeviriyi sağlamış. Yani önceki gibi artık benim çevirim olmayacak.
-https://github.com/seerge/g-helper
+[![Github all releases](https://img.shields.io/github/downloads/seerge/g-helper/total.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub release](https://img.shields.io/github/release/seerge/g-helper.svg)](https://GitHub.com/seerge/g-helper/releases/) [![GitHub stars](https://img.shields.io/github/stars/seerge/g-helper.svg?style=social&label=Star)](https://GitHub.com/seerge/g-helper/stargazers/)
+
+Dil: Türkçe | [English](https://github.com/seerge/g-helper/blob/main/docs/README.md) | [中文](https://github.com/seerge/g-helper/blob/main/docs/README.zh-CN.md)
+
+## Asus dizüstü bilgisayarlar için hafif Armoury Crate alternatifi
+
+ROG Zephyrus G14, G15, Flow X13, Flow X16, TUF, Strix, Scar ve diğer modeller için kontrol aracı. Armoury Crate ile yapabileceğiniz neredeyse her şeyi yapmanıza izin veren küçük bir yardımcı program. Hem de ekstra yük ve gereksiz hizmetler olmadan.
 
 
+## :gift: Temel Avantajlar
 
-
-
-
-
-# [G-Helper-TR (GHelper)](https://github.com/HamzaYslmn/g-helper-TR)
-
-![https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total?style=for-the-badge](https://img.shields.io/github/downloads/HamzaYslmn/g-helper-TR/total?style=for-the-badge)
-![https://img.shields.io/github/v/release/HamzaYslmn/g-helper-TR.svg?style=for-the-badge](https://img.shields.io/github/v/release/HamzaYslmn/g-helper-TR.svg?style=for-the-badge)
-![https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR?color=e3b341&style=for-the-badge](https://img.shields.io/github/stars/HamzaYslmn/g-helper-TR?color=e3b341&style=for-the-badge)
-
-## Asus ROG Zephyrus G14, G15, Flow X13, Flow X16 ve diğer modeller için açık kaynaklı Armory Crate alternatifi
-
-Fazladan yük ve gereksiz hizmetler olmadan Armoury Crate ile yapabileceğiniz neredeyse her şeyi yapmanızı sağlayan küçük bir yardımcı programdır.
-
-### :gift: Temel avantajları
-
-1. Sorunsuz ve otomatik GPU geçişleri (tüm uygulamalarınızı kapatmanızı vb. istemeden)
-2. Tüm performans modları tamamen özelleştirilebilir (fan eğrileri ve PPT'lerle)
-3. Çok hafiftir ve neredeyse hiç kaynak tüketmez, hiçbir hizmet yüklemez. Sadece çalıştırılacak tek bir exe dosyası
-4. Tüm ayarlara kolay erişim sağlayan basit ve temiz kullanıcı arayüzü
+1. Sorunsuz ve otomatik GPU geçişi (tüm uygulamaları kapatmanızı vb. istemeden)
+2. Tüm performans modları tamamen özelleştirilebilir (fan eğrileri ve PPT'ler ile)
+3. Çok hafiftir ve neredeyse hiç kaynak tüketmez, herhangi bir hizmet yüklemez. Çalıştırmak için sadece tek bir exe
+4. Tüm ayarlara kolay erişim sağlayan basit ve temiz yerel kullanıcı arayüzü
+5. Çalıştırmak için yönetici ayrıcalıklarına ihtiyaç duymaz!
 
 ### [:floppy_disk: En son sürümü indirin](https://github.com/HamzaYslmn/g-helper-TR/releases/latest/download/GHelperTR.zip)
 
-Bu uygulamayı beğendiyseniz, lütfen [Github'da :star: ile](https://github.com/seerge/g-helper) işaretleyin.
+Bu uygulamayı beğendiyseniz, lütfen [Github'da :star: ile](https://github.com/HamzaYslmn/g-helper-TR) işaretleyin.
+### :euro: [Bağış yapın ve G-HelperTR'yi destekleyin](https://www.buymeacoffee.com/hamzayslmn)
 
-![https://user-images.githubusercontent.com/78810304/228032141-8146a3de-d440-46cc-b047-a681e6c017af.png](https://user-images.githubusercontent.com/78810304/228032141-8146a3de-d440-46cc-b047-a681e6c017af.png)
+_Uygulama hakkında gönderi paylaşırsanız - lütfen bir bağlantı ekleyin. Teşekkürler._
 
-### :zap: Temel özellikler
+![Screenshot 2023-04-13 190951](https://user-images.githubusercontent.com/5920850/231859391-c4963af4-491c-4523-95d4-0bdcfd7cfd6f.png)
 
-1. Dahili **Performans modları**: Sessiz - Dengeli - Turbo (varsayılan fan eğrileriyle)
-2. **GPU modları**: Eco - Standart - Ultimate - Otomatik
-3. Dizüstü bilgisayar ekran yenileme hızı 60hz veya 120hz (modelinize bağlı olarak 144hz vb.) display overdrive (OD) ile birlikte
-4. Her performans modu için varsayılan ve özel fan profilleri
-5. Her performans modu için güç sınırları (PPT)
-6. CPU turbo boost modu
-7. Klavye arkadan aydınlatmalı animasyon ve renkler
-8. [Starlight](https://github.com/vddCore/Starlight) sayesinde anime matrix kontrolü + benim tarafımdan bazı ayarlamalar (animasyonlu GIF'ler dahil)
-9. FN+F5 performans modlarını döndürür, FN+F4 klavye animasyon modlarını döndürür
-10. M3 ve M4 tuşları için tuş atamaları
-11. Pil sağlığını korumak için pil şarj sınırı
-12. CPU / GPU sıcaklıklarını, fan hızlarını ve pil deşarj hızını takip edin
+### :zap: Temel Özellikler
 
-### :apple: Şarjda veya prize takılıyken modların otomatik olarak değiştirilmesi
+1. **Performans modları**: Sessiz - Dengeli - Turbo (Manuel ve Varsayılan fan eğrileri)
+2. **GPU modları**: Eco - Standart - Ultimate - Optimize
+3. Ekran overdrive (OD) ve miniled multizone anahtarı ile dizüstü bilgisayar ekranı yenileme hızı 60hz veya 120hz (144hz, vb.)
+4. Her performans modu için özel fan eğrisi editörü, güç limitleri (PPT) ve turbo boost seçimi
+5. Starlight] (https://github.com/vddCore/Starlight) sayesinde anime matris kontrolü + animasyonlu GIF'ler de dahil olmak üzere benim tarafımdan bazı ince ayarlar
+6. Klavye arkadan aydınlatma animasyonu ve renkleri (uyku animasyonu ve TUF modelleri için destek dahil)
+7. M3, M4 tuşları ve FN+F5 (performans modu) FN+F4 (klavye animasyon modları) için özel bağlamalar
+8. CPU / GPU sıcaklığını, fan hızlarını ve pil deşarj oranını izleyin
+9. Pil sağlığını korumak için batarya şarj limiti
 
-- Performans modları (uygulama, bataryada veya takılıyken kullanılan son modu hatırlar)
-- Otomatik GPU modu - bataryada dGPU'yu devre dışı bırakır ve takıldığında etkinleştirir
-- Otomatik Ekran yenileme hızı (bataryada 60hz, takılıyken 120+ hz)
+### :gear: Bataryada veya Fişe takılıyken otomatik geçiş
+- Performans modları (uygulama pildeyken veya prize takılıyken kullanılan son modu hatırlar)
+- Optimize GPU modu - dGPU'yu pildeyken devre dışı bırakır ve prize takılıyken etkinleştirir
+- Otomatik Ekran yenileme hızı (pilde 60hz, prize takılıyken 120+ hz)
+- Klavye arka ışığı bataryadayken kapatılabilir
 
-Otomatik geçiş ve kısayol tuşlarının çalışması için uygulamanın tepside çalışır durumda olması gereklidir. Herhangi bir kaynak tüketmez.
+Otomatik geçiş ve kısayol tuşlarının çalışmaya devam etmesi için uygulamanın tepside çalışır durumda kalması gerekir. Herhangi bir kaynak tüketmez. 
 
 ### :rocket: Performans Modları
 
-Modlar **Armory Crate**'tekiyle aynıdır (bios'ta depolandığı için) ve varsayılan fan eğrilerini içerir
+Modlar, varsayılan fan eğrileri de dahil olmak üzere bios'ta saklandıkları için Armoury Crate'teki ile **aynıdır**
 
-1. Sessiz  - Windows'ta en iyi güç verimliliği ayarı
-2. Dengeli - Windows'ta Dengeli ayarı
-3. Turbo   - Windows'ta En İyi Performans ayarı
+1. Sessiz (minimum veya hiç fan yok, toplam 70W PPT, CPU'ya 45W PPT'ye kadar) + Windows'ta en iyi güç verimliliği ayarı
+2. Dengeli (dengeli fanlar, toplam 100W PPT, CPU'ya 45W PPT'ye kadar) + Windows'ta dengeli ayar
+3. Turbo (yoğun fanlar, toplam 125W PPT, CPU'ya 80W PPT'ye kadar) + Windows'ta en iyi performans ayarı
 
-Diğer modeller için PPT'ler G14 2022 için gösterilir, çünkü bios'ta ayarlanmışlardır.
+PPT'ler G14 2022 için gösterilmiştir, diğer modeller için PPT'ler bios'ta ayarlandıkları için farklı olacaktır._
+
+![Screenshot 2023-04-13 191030](https://user-images.githubusercontent.com/5920850/231859519-3cfa40f1-b06e-4cdb-b3e8-5187521ce208.png)
 
 ### :video_game: GPU Modları
 
-1. Eco modu : Sadece düşük güç tüketimli entegre GPU etkinleştirildi, iGPU yerleşik ekranı sürüyor.
-2. Standart mod (MS Hybrid): iGPU ve dGPU etkinleştirildi, iGPU yerleşik ekranı sürüyor.
-3. Ultimate modu(MUX): iGPU ve dGPU etkinleştirildi, ancak dGPU yerleşik ekranı sürer.  **(2022++)**
-4. Otomatik : Bataryada dGPU'yu devre dışı bırakır (Eco) ve prize takıldığında etkinleştirir (Standart).
+1. Eko modu: yalnızca düşük güçlü entegre GPU etkin, iGPU yerleşik ekran sürücüleri
+2. Standart mod (MS Hybrid): iGPU ve dGPU etkin, iGPU sürücüler yerleşik ekran
+3. Ultimate modu: iGPU ve dGPU etkin, ancak dGPU yerleşik ekranı kullanıyor (yalnızca G14 2022 modelinde desteklenir)
+4. Optimize edilmiş: dGPU'yu pildeyken devre dışı bırakır (Eco) ve prize takıldığında etkinleştirir (Standart)
 
-### :question: SSS
+## :question: SSS
 
-### M4 / Rog tuşuna her bastığımda Armory Crate kurulumu / açılış penceresi nasıl durdurulur?
+#### M4 / Rog tuşuna her bastığımda Armory Crate yükleme açılır penceresinin görünmesini nasıl durdurabilirim?
+Aşağıdaki ``C:\Windows\System32\ASUSACCI\ArmouryCrateKeyControl.exe`` dosyasını silin veya bir yere taşıyın.
 
-Her M4 / Rog tuşuna bastığımda Armory Crate yükleme açılır penceresini nasıl durdurabilirim?
-BIOS'a gidin (başlangıçta F2), Gelişmiş Ayarları açın ve "Armory Control Intrerface"i devre dışı bırakın. 
-Hala görünüyorsa - "C:\Windows\System32\ASUSACCI\ArmouryCrateKeyControl.exe" dosyasını silin veya bir yere taşıyın
+Eğer hala görünüyorsa - BIOS'a gidin (açılışta F2), Gelişmiş Ayarları açın ve "Armory Control Interface "i devre dışı bırakın. 
 
-### Neden Ultimate GPU modu benim dizüstü bilgisayarımda mevcut değil?
-Ultimate modu (donanım tarafından) sadece 2022+ modellerde destekleniyor.
+#### Ultimate GPU modu dizüstü bilgisayarımda neden mevcut değil?
+Ultimate modu (donanım tarafından) yalnızca G14 2022'de (ve muhtemelen 2022+'daki diğer modellerde) desteklenmektedir
 
 #### G14 2020 cihazımda Eco modunu (dGPU'yu devre dışı bırak) ayarlayamıyorum
-Maalesef 2020 modelinde bunu donanım düzeyinde desteklemiyor.
+Ne yazık ki 2020 modeli donanım düzeyinde bunu desteklemiyor
 
-#### Özel PPT'ler ve Fan profilleri uygulamalı mıyım?
-Gerekli değil, tamamen isteğe bağlı. Deneyimlerimden, bios'ta bulunan performans modları iyi çalışıyor. Güç sınırlaması yapın veya özel fan eğrileri uygulayın, ancak sadece sorunlarınız varsa. Fan + güç bölümünde Uygula'yı tıkladığınız anda bios, fan profilini "özel" olarak düşünecektir! (düzenlemiş olsanız da olmasanız da)
+#### Özel PPT'ler ve taraftar profilleri uygulamalı mıyım?
+Yapmak zorunda değilsiniz, tamamen isteğe bağlıdır. Deneyimlerime göre yerleşik (bios'ta) performans modları iyi çalışıyor. Gücünüzü sınırlayın veya özel fan eğrilerini yalnızca sorun yaşarsanız uygulayın. Fan + güç bölümünde Uygula'ya tıkladığınız anda bios fan profilini "özel" olarak değerlendirecektir! (değiştirmiş olsanız da olmasanız da)
 
 #### G-helper fan hızlarımı nasıl kontrol ediyor?
-Kontrol etmiyor. Bios'unuz kontrol ediyor (armoury ile aynı durumda). G-helper, aynı uç noktayı kullanarak (isteğe bağlı olarak) mevcut performans moduna 8 çift sıcaklık + fan hızı% 'lik özel bir fan profilini ayarlayabilir.
+Kontrol etmez. Bios'unuz kontrol eder (armoury'de olduğu gibi). G-helper'ın yapabildiği şey - (isteğe bağlı olarak) armoury'nin kullandığı aynı uç nokta aracılığıyla 8 çift sıcaklık + fan hızı %'sinden oluşan mevcut performans moduna özel bir fan profili ayarlamaktır.
 
-#### Fan % değerini (fan RPM değerini) nasıl değiştirebilirim?
+#### Fan % değerini fan RPM değerine nasıl değiştirebilirim?
 Üzerlerine tıklayın
 
-#### G-helper'da GPU sıcaklığını göremiyorum.
-Muhtemelen Eco / Optimized modunu kullanıyorsunuz ve dGPU'nuz kapalı durumda veya Windows güç tasarrufu için dGPU'yu uyku moduna almış olabilir. Bu durumlarda G-helper GPU'nuzu okuyamayacak ve sıcaklık okumaları alamayacaktır.
+#### G-helper'da GPU sıcaklığını göremiyorum
+Büyük olasılıkla ya Eco / Optimized modunu kullanıyorsunuz ve dGPU'nuz kapalı ya da Windows dGPU'yu uyku moduna geçirdi (gücü korumak için). Bu durumda G-helper GPU'nuza ulaşamaz ve okuma alamaz
 
-#### Uygulama başlatılmıyor / veya çöktü, ne yapmalıyım?
+#### Bu uygulamanın zaten çalıştığını söylüyor
+Lütfen (G) simgesi için sistem tepsisini kontrol edin. Varsayılan olarak Windows tüm simgeleri gizlemeye isteklidir, bu nedenle hepsini görmek için ^ öğesine tıklamanız gerekebilir. Görev Çubuğuna sağ tıklayıp Görev Çubuğu Ayarları -> Diğer Sistem Tepsisi simgeleri -> G-Helper'ı her zaman AÇIK olarak işaretle seçeneğini seçmenizi tavsiye ederim.
 
-Başlangıç ​​menüsünden "Olay Görüntüleyicisi"ni açın, Windows Kayıtları -> Uygulama'ya gidin ve G-Helper'ı belirten son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarıyla bir [Hata Raporu](https://github.com/seerge/g-helper/issues) gönderin.
+#### Uygulama başlamıyor / veya çöküyor, ne yapmalıyım?
+Başlat menüsünden "Olay Görüntüleyicisi "ni açın, Windows Günlükleri -> Uygulama'ya gidin ve G-Helper'dan bahseden son Hataları kontrol edin. Bir tane görürseniz - lütfen bu hatanın tüm ayrıntılarını içeren bir [yeni sorun] (https://github.com/seerge/g-helper/issues) gönderin.
+
+#### MyASUS uygulamasını G-Helper ile birlikte kullanabilir miyim?
+Elbette kullanabilirsiniz! Tek sorun, MyASUS'un daha önce ayarladığınız pil şarj limitini geçersiz kılabilmesidir. Böyle bir durumda tavsiyem, hem MyASUS hem de G-Helper'da aynı limiti (yani %80) ayarlamanız olacaktır.
+
+#### Mikrofonu Sessize Al özelliğini M3 olarak nasıl ayarlayabilirim?
+Bu işlev Asus Optimizasyon Hizmeti tarafından gerçekleştirilir (bu nedenle G-yardımcısı bu işleve müdahale etmez ve dokunmaz). Bu hizmetin açık ve çalışır durumda olduğundan emin olun
+
+#### Farklı "Görsel stilleri" nasıl ayarlayabilirim?
+Şahsen ben bunların büyük bir hayranı değilim, çünkü renkleri çok yanlış yapıyorlar. Ama eğer isterseniz - Nvidia Control panel ya da AMD Adrenaline (uygun ekran bölümleri) kullanarak ekran renklerini ayarlayabilirsiniz. Eğer gerçekten istiyorsanız [MS Store'dan kendi ASUS yardımcı programını] da kullanabilirsiniz (https://apps.microsoft.com/store/detail/gamevisual/9P4K1LFTXSH8?hl=nl-nl&gl=nl&rtc=1)
+
+#### Nvidia GPU çekirdeğini / belleğini overclock edebilir miyim?
+Şu anda nvidia GPU'ya sahip değilim, bu yüzden uygulamaya güvenli bir şekilde hız aşırtma ekleyemiyorum. Ancak bunu yapmak için "msi afterburner" kullanabilirsiniz ve GPU'nuzla çok daha fazlasını yapabilirsiniz, çünkü bu konuda çok daha uzmanlaşmıştır :)
 
 #### G-helper'ı nasıl kaldırabilirim?
+G-helper tek bir exe'dir ve sisteme hiçbir şey yüklemez. Kaldırmak için - sadece exe'yi silebilirsiniz :) Herhangi bir özel fan profili veya PPT uyguladıysanız - kaldırmadan önce favori performans modunuzu (örneğin dengeli) seçmenizi ve Fanlar + Güç altında "Fabrika varsayılanları" nı tıklamanızı tavsiye ederim.
 
-G-helper tek bir exe'dir ve sisteme hiçbir şey yüklemez. Kaldırmak için - exe'yi sadece silmeniz yeterlidir :) 
-Standart moda geçtikten sonra, özel fan profillerini ve PPT'leri uygulamayı kaldırmadan önce temizlemenizi öneririm.
+#### G-helper nedir?
+Asus dizüstü bilgisayarlar için hafif bir Armoury Crate alternatifidir. Armoury Crate ile yapabileceğiniz neredeyse her şeyi yapmanıza izin veren küçük bir yardımcı programdır, hem de ekstra yük ve gereksiz hizmetler olmadan.
 
----
 
-### Nasıl yüklenir
+-----------------------------
 
-1. **[Sürümler sayfasından](https://github.com/HamzaYslmn/g-helper-TR/releases)** en son sürümü indirin
-2. Seçtiğiniz bir klasöre çıkartın (Tavsiyem: C:\G-HelperTR)
-3. **GHelperTR.exe**'yi çalıştırın
+## :euro: [Proje Desteği](https://www.buymeacoffee.com/hamzayslmn)
+#### If you like the app you can make a [buymeacoffee](https://www.buymeacoffee.com/hamzayslmn)
+[![QR Code](https://avatars.mds.yandex.net/get-images-cbir/4568516/xyJA1-1KkL77yTJ6hzvPvA7337/ocr)](hhttps://www.buymeacoffee.com/hamzayslmn)
 
-### Gereksinimler
+----------------
 
-- Uygulama için [.NET7](https://dotnet.microsoft.com/en-us/download) yüklü olmalıdır. Muhtemelen zaten sizde yüklüdür. Yoksa Otomatik olarak indirmek için uyarı balonu çıkar.
-- "Asus Optimization Service" adlı hizmetin çalışmasını öneririm, çünkü ekran veya klavye parlaklığı gibi temel dizüstü bilgisayar kısayollarını çalışır durumda tutar. Eğer MyASUS uygulaması yüklediyseniz, hizmetin MyASUS kaldırıldıktan sonra bile muhtemelen hala çalışıyor olduğunu unutmayın. Bu Uygulama [Asus Sistem Kontrol Arayüzü'nün](https://www.asus.com/support/FAQ/1047338/)parçasıdır, eğer sizde kurulu değilse çalışmaz.
-- Uygulamayı Armory Crate ile birlikte kullanmanız önerilmez, çünkü aynı ayarları düzenlerler. [Kendi kaldırma aracını kullanarak](https://dlcdnets.asus.com/pub/ASUS/mb/14Utilities/Armoury_Crate_Uninstall_Tool.zip?model=armoury%20crate) ArmouryCreate'i kaldırabilirsiniz. Her ihtimale karşı, her zaman geri yükleyebilirsiniz.
+### Nasıl kurulur
 
-- Gereksiz hizmetleri otomatik olarak devre dışı bırakmak/kaldırmak için [bu bat dosyasını](https://github.com/HamzaYslmn/g-helper-TR/blob/main/debloat.bat) yönetici olarak çalştırın.
+1. En son sürümü [**Releases Page**](https://github.com/HamzaYslmn/g-helper-TR/releases) adresinden indirin.
+2. İstediğiniz bir klasöre açın
+3. Çalıştır **GHelper.exe**
 
-Not: G-Helper uygulamasını çalıştırmak için yönetici izinlerine ihtiyaç yoktur!
+### Gereksinimler (zorunlu)
 
----
+- Microsoft [.NET7](https://dotnet.microsoft.com/en-us/download). Büyük olasılıkla zaten sahipsiniz. Aksi takdirde resmi web sitesinden [indirebilirsiniz](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-7.0.202-windows-x64-installer).
 
-Asus Zephyrus G14 2022 (AMD Radeon iGPU ve dGPU ile birlikte) için tasarlanmış ve geliştirilmiştir. Ancak ilgili ve desteklenen özellikler için potansiyel olarak G14 2021 ve 2020, G15, X FLOW ve diğer ROG modellerinde çalışabilir.
+- Asus Sistem Kontrol Arayüzü](https://dlcdnets.asus.com/pub/ASUS/nb/Image/CustomComponent/ASUSSystemControlInterfaceV3/ASUSSystemControlInterfaceV3.exe). MyASUS uygulamasını yüklediyseniz veya yüklediyseniz, bu "sürücü" muhtemelen hala yerindedir (MyASUS kaldırıldıktan sonra bile). Alternatif olarak - indirip kurabilirsiniz
 
-Uygulamayı imzalamak için henüz bir Microsoft sertifikam yok, bu nedenle başlatma sırasında Windows Defender'dan bir uyarı alırsanız (Windows PC'nizi korudu), Daha Fazla Bilgi -> Yine de Çalıştır'a tıklayın. Alternatif olarak, Visual Studio kullanarak projeyi kendiniz derleyip çalıştırabilirsiniz :)
+### Öneriler (isteğe bağlı)
 
-Ayarlar dosyası `%AppData%\\GHelper`'da saklanır.
----
+- Ekran veya klavye parlaklık ayarı gibi temel dizüstü bilgisayar kısayol tuşlarının çalışmasını sağladığı için "Asus Optimizasyon Hizmeti "ni çalışır durumda tutmanızı öneririm.
 
-[HHzimetleri Devre Dışı Bırakmak (debloat.bat)](https://github.com/HamzaYslmn/g-helper-TR/blob/main/debloat.bat), pilinizi ve dizüstü bilgisayarınızı biraz daha serin tutmanıza yardımcı olur.
+- İsteğe bağlı olarak(!) [bu debloat bat dosyasını](https://raw.githubusercontent.com/seerge/g-helper/main/debloat.bat) yönetici olarak çalıştırarak gereksiz hizmetleri devre dışı bırakabilir / kaldırabilirsiniz. Hizmetleri geri yüklemek için - bunun yerine [this bloat bat file](https://raw.githubusercontent.com/seerge/g-helper/main/bloat.bat) çalıştırın.
 
-![https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshots/screen-5w.png](https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshots/screen-5w.png)
+- Armoury Crate hizmetleri ile birlikte bir uygulama kullanmanız önerilmez, çünkü aynı ayarları yaparlar. Kendi kaldırma aracını kullanarak kaldırabilirsiniz](https://dlcdnets.asus.com/pub/ASUS/mb/14Utilities/Armoury_Crate_Uninstall_Tool.zip?model=armoury%20crate). Her ihtimale karşı, daha sonra her zaman geri yükleyebilirsiniz.
 
----
+-------------------------------
 
-**Açıklamalar**
-"ROG", "TUF" ve "Armoury Crate" AsusTek Computer, Inc.'in ticari markalarıdır ve bunlara veya AsusTek Computer'a ait herhangi bir varlığa sahip olduğumu iddia etmiyorum ve bu uygulamayı sadece bilgilendirme amaçlı kullanıyorum.
+Asus Zephyrus G14 2022 (AMD Radeon iGPU ve dGPU ile) için tasarlanmış ve geliştirilmiştir. Ancak ilgili ve desteklenen özellikler için 2021 ve 2020 G14, G15, X FLOW ve diğer ROG modelleri için potansiyel olarak çalışabilir ve çalışmalıdır.
 
-BU YAZILIM "OLDUĞU GİBİ" SAĞLANMAKTADIR VE HERHANGİ BİR TÜRDE, AÇIK VEYA ZIMNİ BİR GARANTİSİ BULUNMAMAKTADIR. SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VEYA İHLAL ETMEME GARANTİLERİ DE DAHİL OLMAK ÜZERE HİÇBİR GARANTİSİ BULUNMAMAKTADIR. BU YAZILIMIN YANLIŞ KULLANIMI, SİSTEM İSTİKRARSIZLIĞINA VEYA ARIZALANMAYA NEDEN OLABİLİR. SORUMLULUK SİZE AİTTİR.
+Uygulamayı imzalamak için henüz bir Microsoft sertifikam yok, bu nedenle başlatıldığında Windows Defender'dan bir uyarı alırsanız (Windows Bilgisayarınızı Korudu), Daha Fazla Bilgi -> Yine de Çalıştır'a tıklayın. Alternatif olarak Visual Studio kullanarak projeyi kendiniz derleyebilir ve çalıştırabilirsiniz :)
 
+Ayarlar dosyası ``%AppData%\GHelper`` adresinde saklanır
+
+------------------
+
+Debloating, pilden tasarruf etmenize ve dizüstü bilgisayarınızı biraz daha serin tutmanıza yardımcı olur
+
+![Pilinizden tasarruf etmenize yardımcı olur](https://raw.githubusercontent.com/seerge/g-helper/main/docs/screenshots/screen-5w.png)
+
+---------
+
+## Güçlü kullanıcı ayarları
+
+### Her mod için özel güç planları
+
+config.json dosyasında (``%AppData%\GHelper`` altında) özel güç planı GUID'sini manuel olarak ekleyebilirsiniz (değiştirilebilen "gerçek" güç planı veya g-helper'ın varsayılan olarak ayarladığı gibi "kaplama" güç planı olabilir)
+
+Format aşağıdaki gibidir: ``"scheme_<mode>" : "GUID" ``
+
+Burada ``mode = 0 (dengeli), 1 (turbo), 2 (sessiz)``
+
+```
+"scheme_0": "2ac1d0e0-17a7-44ed-8091-d88ef75a4eb0",
+"scheme_1": "381b4222-f694-41f0-9685-ff5bb260df2e"
+```
+
+Json yapısını koruduğunuzdan emin olun (yani fazladan veya eksik virgüller vb. ile bozmayın) - aksi takdirde uygulama onu okuyamaz ve bunun yerine yeni bir yapılandırma oluşturur.
+
+### Özel kısayol tuşu eylemleri
+
+Uygulama M3, M4 ve FN+F4 kısayol tuşları için özel eylemleri destekler. Bunları ayarlamak için ilgili kısayol tuşunun yanındaki "Özel" seçeneğini seçin ve aşağıdakilerden birini yapın:
+
+1. Herhangi bir özel uygulamayı çalıştırmak için - "eylem" metin alanına exe'nin tam yolunu girin, örneğin:
+``C:\Program Files\EA Games\Battlefield 2042\BF2042.exe``
+
+2. Herhangi bir Windows tuşunu simüle etmek için - "eylem" alanına uygun tuş kodunu girin, örneğin Print screen için ``0x2C``. 
+Tuş kodlarının tam listesi https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+
+![Screenshot 2023-04-13 172537](https://user-images.githubusercontent.com/5920850/231837470-df913847-cf8a-43e1-80b6-5eb6e9eaee4e.png)
+
+------------
+**Yasal Uyarılar**
+"ROG", "TUF" ve "Armoury Crate" AsusTek Computer, Inc. şirketine ait ticari markalardır. Bunlar veya AsusTek Computer'a ait herhangi bir varlık üzerinde hiçbir hak iddia etmiyorum ve bunları yalnızca bilgilendirme amacıyla kullanıyorum.
+
+YAZILIM, TİCARİ ELVERİŞLİLİK, BELİRLİ BİR AMACA UYGUNLUK VE İHLAL ETMEME GARANTİLERİ DAHİL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE AÇIK VEYA ZIMNİ HİÇBİR GARANTİ OLMAKSIZIN "OLDUĞU GİBİ" SUNULMAKTADIR. BU YAZILIMIN YANLIŞ KULLANIMI SİSTEM KARARSIZLIĞINA VEYA ARIZAYA NEDEN OLABİLİR.

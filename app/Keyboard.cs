@@ -104,7 +104,7 @@ namespace GHelper
 
         private void PictureHelp_Click(object? sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://github.com/seerge/g-helper#custom-hotkey-actions") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://github.com/HamzaYslmn/g-helper-TR#custom-hotkey-actions") { UseShellExecute = true });
         }
 
         private void CheckNoOverdrive_CheckedChanged(object? sender, EventArgs e)
