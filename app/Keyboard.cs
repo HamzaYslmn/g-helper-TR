@@ -104,7 +104,7 @@ namespace GHelper
 
         private void PictureHelp_Click(object? sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://github.com/HamzaYslmn/g-helper-TR#custom-hotkey-actions") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://github.com/HamzaYslmn/g-helper-TR#%C3%B6zel-k%C4%B1sayol-tu%C5%9Fu-eylemleri") { UseShellExecute = true });
         }
 
         private void CheckNoOverdrive_CheckedChanged(object? sender, EventArgs e)
