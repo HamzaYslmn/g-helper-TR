@@ -20,7 +20,7 @@ Control tool for ROG Zephyrus G14, G15, Flow X13, Flow X16, TUF, Strix, Scar and
 ## [:floppy_disk: Download App](https://github.com/seerge/g-helper/releases/latest/download/GHelper.zip)
 
 If you like this app, please [star :star: it on Github](https://github.com/seerge/g-helper) and spread a word about it!
-### :euro: [Donate and support G-Helper](https://www.paypal.com/donate/?hosted_button_id=4HMSHS4EBQWTA)
+### :euro: [Donate and support G-Helper](https://www.buymeacoffee.com/hamzayslmn)
 
 _If you post about the app - please include a link. Thanks._
 
@@ -117,9 +117,9 @@ It's a lightweight Armoury Crate alternative for Asus laptops. A small utility t
 
 -----------------------------
 
-## :euro: [Support Project](https://www.paypal.com/donate/?hosted_button_id=4HMSHS4EBQWTA)
-#### If you like the app you can make a [Donation via Paypal](https://www.paypal.com/donate/?hosted_button_id=4HMSHS4EBQWTA)
-[![QR Code](https://user-images.githubusercontent.com/5920850/233658717-0441494d-fede-4a2c-b4f2-4b16a184a69a.png)](https://www.paypal.com/donate/?hosted_button_id=4HMSHS4EBQWTA)
+## :euro: [Support Project](https://www.buymeacoffee.com/hamzayslmn)
+#### If you like the app you can make a [Donation via BuyMeCoffe](https://www.buymeacoffee.com/hamzayslmn)
+[![QR Code](https://avatars.mds.yandex.net/get-images-cbir/4568516/xyJA1-1KkL77yTJ6hzvPvA7337/ocr)](hhttps://www.buymeacoffee.com/hamzayslmn)
 
 ----------------
 
