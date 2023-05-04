@@ -18,13 +18,21 @@ namespace GHelper
         {
 
             InitializeComponent();
+
+            Text = Properties.Strings.FansAndPower;
+            labelPowerLimits.Text = Properties.Strings.PowerLimits;
+            labelInfo.Text = Properties.Strings.PPTExperimental;
+            checkApplyPower.Text = Properties.Strings.ApplyPowerLimits;
+
+            labelFans.Text = Properties.Strings.FanCurves;
+            labelBoost.Text = Properties.Strings.CPUBoost;
+            buttonReset.Text = Properties.Strings.FactoryDefaults;
+            checkApplyFans.Text = Properties.Strings.ApplyFanCurve;
+
             InitTheme();
 
             MinRPM = 18;
             MaxRPM = HardwareMonitor.GetFanMax();
-
-
-
             labelTip.Visible = false;
             labelTip.BackColor = Color.Transparent;
 
@@ -71,6 +79,7 @@ namespace GHelper
 
             //labelInfo.MaximumSize = new Size(280, 0);
             labelInfo.Text = Properties.Strings.PPTExperimental;
+            labelFansResult.Visible = false;
 
             InitFans();
             InitPower();
@@ -86,13 +95,25 @@ namespace GHelper
 
         private void InitGPUClocks()
         {
+            /*
+            try
+            {
+                using (var _gpuControl = new NvidiaGpuControl())
+                {
+                    panelGPU.Visible = _gpuControl.IsValid;
 
-            panelGPU.Visible = HardwareMonitor.GpuControl.IsNvidia;
+                    trackGPUCore.Value = Math.Min(Program.config.getConfig("GPUCore"), 300);
+                    trackGPUMemory.Value = Math.Min(Program.config.getConfig("GPUMemory"), 300);
+                    VisualiseGPUClocks();
+                }
+            } catch (Exception ex)
+            {
+                panelGPU.Visible=false;
+            }
+            */
 
-            trackGPUCore.Value = Math.Min(Program.config.getConfig("GPUCore"), 300);
-            trackGPUMemory.Value = Math.Min(Program.config.getConfig("GPUMemory"), 300);
+            panelGPU.Visible = false;
 
-            VisualiseGPUClocks();
         }
 
         private void ButtonResetGPU_Click(object? sender, EventArgs e)
@@ -263,7 +284,7 @@ namespace GHelper
         public void LabelFansResult(string text)
         {
             labelFansResult.Text = text;
-            labelFansResult.Visible = (text.Length == 0);
+            labelFansResult.Visible = (text.Length > 0);
         }
 
         private void Fans_FormClosing(object? sender, FormClosingEventArgs e)
@@ -290,7 +311,7 @@ namespace GHelper
             // Yes, that's stupid, but Total slider on 2021 model actually adjusts CPU PPT
             if (!cpuBmode)
             {
-                label1.Text = "CPU SPPT";
+                labelPlatform.Text = "CPU SPPT";
             }
 
             int limit_total;

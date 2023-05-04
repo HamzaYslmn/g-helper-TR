@@ -2,11 +2,45 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Globalization;
 using System.Management;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Windows.Forms;
 using Tools;
 
 namespace GHelper
 {
+
+    class CustomContextMenu : ContextMenuStrip
+    {
+        [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        private static extern long DwmSetWindowAttribute(IntPtr hwnd,
+                                                            DWMWINDOWATTRIBUTE attribute,
+                                                            ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
+                                                            uint cbAttribute);
+
+        public CustomContextMenu()
+        {
+            var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUNDSMALL;     //change as you want
+            DwmSetWindowAttribute(Handle,
+                                  DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
+                                  ref preference,
+                                  sizeof(uint));
+        }
+
+        public enum DWMWINDOWATTRIBUTE
+        {
+            DWMWA_WINDOW_CORNER_PREFERENCE = 33
+        }
+        public enum DWM_WINDOW_CORNER_PREFERENCE
+        {
+            DWMWA_DEFAULT = 0,
+            DWMWCP_DONOTROUND = 1,
+            DWMWCP_ROUND = 2,
+            DWMWCP_ROUNDSMALL = 3,
+        }
+    }
+
     static class Program
     {
         public static NotifyIcon trayIcon = new NotifyIcon
@@ -81,7 +115,7 @@ namespace GHelper
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture;
             Debug.WriteLine(CultureInfo.CurrentUICulture);
 
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("es");
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("zh");
 
             CheckProcesses();
 
@@ -103,7 +137,7 @@ namespace GHelper
             }
 
             Logger.WriteLine("------------");
-            Logger.WriteLine("App launched: " + config.GetModel());
+            Logger.WriteLine("App launched: " + config.GetModel() + " :" + Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
             Application.EnableVisualStyles();
 
@@ -120,7 +154,7 @@ namespace GHelper
 
             SetAutoModes();
 
-            HardwareMonitor.RecreateGpuTemperatureProvider();
+            HardwareMonitor.RecreateGpuControl();
 
             // Subscribing for system power change events
             SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
@@ -143,7 +177,6 @@ namespace GHelper
 
 
         }
-
 
         static void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
@@ -175,7 +208,7 @@ namespace GHelper
         public static void SetAutoModes()
         {
 
-            if (Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastAuto) < 2000) return;
+            if (Math.Abs(DateTimeOffset.Now.ToUnixTimeMilliseconds() - lastAuto) < 3000) return;
             lastAuto = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
             isPlugged = SystemInformation.PowerStatus.PowerLineStatus;
@@ -251,7 +284,7 @@ namespace GHelper
             if (action is null || action.Length <= 1)
             {
                 if (name == "m4")
-                    action = "performance";
+                    action = "ghelper";
                 if (name == "fnf4")
                     action = "aura";
             }
@@ -269,6 +302,9 @@ namespace GHelper
                     break;
                 case "screen":
                     NativeMethods.TurnOffScreen(Program.settingsForm.Handle);
+                    break;
+                case "miniled":
+                    settingsForm.BeginInvoke(settingsForm.ToogleMiniled);
                     break;
                 case "aura":
                     settingsForm.BeginInvoke(settingsForm.CycleAuraMode);
@@ -333,7 +369,7 @@ namespace GHelper
 
         static void TrayIcon_MouseClick(object? sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
                 SettingsToggle();
             }

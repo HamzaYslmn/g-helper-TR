@@ -15,6 +15,9 @@ namespace GHelper
     public partial class SettingsForm : RForm
     {
 
+        private ContextMenuStrip contextMenuStrip = new CustomContextMenu();
+        private ToolStripMenuItem menuSilent, menuBalanced, menuTurbo;
+
         public static System.Timers.Timer aTimer = default!;
         public static Point trayPoint;
 
@@ -25,7 +28,7 @@ namespace GHelper
         public string perfName = "Balanced";
 
         public Fans fans;
-        public Keyboard keyb;
+        public Extra keyb;
 
         static AnimeMatrixDevice mat;
         static long lastRefresh;
@@ -140,11 +143,53 @@ namespace GHelper
 
             this.TopMost = Program.config.getConfig("topmost") == 1;
 
+            SetContextMenu();
+
             Task.Run(async () =>
             {
                 await Task.Delay(TimeSpan.FromSeconds(1));
                 CheckForUpdatesAsync();
             });
+
+
+        }
+        
+        private void SetContextMenu()
+        {
+
+            Padding padding = new Padding(5, 5, 5, 5);
+
+            var menuTitle = new ToolStripMenuItem(Properties.Strings.PerformanceMode);
+            menuTitle.Margin = padding;
+            menuTitle.Enabled = false;
+            contextMenuStrip.Items.Add(menuTitle);
+
+            menuSilent = new ToolStripMenuItem(Properties.Strings.Silent);
+            menuSilent.Click += ButtonSilent_Click;
+            menuSilent.Margin = padding;
+            contextMenuStrip.Items.Add(menuSilent);
+
+            menuBalanced = new ToolStripMenuItem(Properties.Strings.Balanced);
+            menuBalanced.Click += ButtonBalanced_Click;
+            menuBalanced.Margin = padding;
+            contextMenuStrip.Items.Add(menuBalanced);
+
+            menuTurbo = new ToolStripMenuItem(Properties.Strings.Turbo);
+            menuTurbo.Click += ButtonTurbo_Click;
+            menuTurbo.Checked = true;
+            menuTurbo.Margin = padding;
+            contextMenuStrip.Items.Add(menuTurbo);
+
+            contextMenuStrip.ShowCheckMargin = true;
+            contextMenuStrip.RenderMode = ToolStripRenderMode.System;
+
+            if (CheckSystemDarkModeStatus())
+            {
+                contextMenuStrip.BackColor = this.BackColor;
+                contextMenuStrip.ForeColor = this.ForeColor;
+            }
+
+            Program.trayIcon.ContextMenuStrip = contextMenuStrip;
 
 
         }
@@ -186,10 +231,7 @@ namespace GHelper
 
                     if (gitVersion.CompareTo(appVersion) > 0)
                     {
-                        BeginInvoke(delegate
-                        {
-                            SetVersionLabel(Properties.Strings.DownloadUpdate + ": " + tag, url);
-                        });
+                        SetVersionLabel(Properties.Strings.DownloadUpdate + ": " + tag, url);
                     }
                     else
                     {
@@ -561,7 +603,7 @@ namespace GHelper
         {
             if (keyb == null || keyb.Text == "")
             {
-                keyb = new Keyboard();
+                keyb = new Extra();
                 keyb.Show();
             }
             else
@@ -692,11 +734,16 @@ namespace GHelper
             SetScreen(60, 0);
         }
 
-        private void ButtonMiniled_Click(object? sender, EventArgs e)
+        public void ToogleMiniled()
         {
             int miniled = (Program.config.getConfig("miniled") == 1) ? 0 : 1;
             Program.config.setConfig("miniled", miniled);
             SetScreen(-1, -1, miniled);
+        }
+
+        private void ButtonMiniled_Click(object? sender, EventArgs e)
+        {
+            ToogleMiniled();
         }
 
         public void SetScreen(int frequency = -1, int overdrive = -1, int miniled = -1)
@@ -853,6 +900,7 @@ namespace GHelper
                 gpuTemp = $": {HardwareMonitor.gpuTemp}°C ";
             }
 
+
             Program.settingsForm.BeginInvoke(delegate
             {
                 labelCPUFan.Text = "CPU" + cpuTemp + HardwareMonitor.cpuFan;
@@ -882,7 +930,12 @@ namespace GHelper
                 this.Top = Screen.FromControl(this).WorkingArea.Height - 10 - this.Height;
                 this.Activate();
 
-                aTimer.Enabled = true;
+                Task.Run(async () =>
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                    aTimer.Enabled = true;
+                });
+
             }
             else
             {
@@ -919,11 +972,6 @@ namespace GHelper
             {
                 Program.wmi.DeviceSet(ASUSWmi.PPT_CPUB0, limit_cpu, "PowerLimit B0");
                 customPower = limit_cpu;
-            }
-
-            if (Program.wmi.DeviceGet(ASUSWmi.PPT_APUC2) >= 0)
-            {
-                Program.wmi.DeviceSet(ASUSWmi.PPT_APUC2, 87, "PowerLimit C2");
             }
 
             Program.settingsForm.BeginInvoke(SetPerformanceLabel);
@@ -1026,18 +1074,25 @@ namespace GHelper
             buttonBalanced.Activated = false;
             buttonTurbo.Activated = false;
 
+            menuSilent.Checked = false;
+            menuBalanced.Checked = false;
+            menuTurbo.Checked = false;
+
             switch (PerformanceMode)
             {
                 case ASUSWmi.PerformanceSilent:
                     buttonSilent.Activated = true;
+                    menuSilent.Checked = true;
                     perfName = Properties.Strings.Silent;
                     break;
                 case ASUSWmi.PerformanceTurbo:
                     buttonTurbo.Activated = true;
+                    menuTurbo.Checked = true;
                     perfName = Properties.Strings.Turbo;
                     break;
                 default:
                     buttonBalanced.Activated = true;
+                    menuBalanced.Checked = true;
                     PerformanceMode = ASUSWmi.PerformanceBalanced;
                     perfName = Properties.Strings.Balanced;
                     break;
@@ -1137,10 +1192,17 @@ namespace GHelper
 
         }
 
+        public static bool IsPlugged()
+        {
+            bool optimizedUSBC = Program.config.getConfig("optimized_usbc") != 1;
+            
+            return SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online && 
+                   (optimizedUSBC || Program.wmi.DeviceGet(ASUSWmi.ChargerMode) != ASUSWmi.ChargerUSB);
+
+        }
+
         public bool AutoGPUMode()
         {
-
-            var Plugged = SystemInformation.PowerStatus.PowerLineStatus;
 
             bool GpuAuto = Program.config.getConfig("gpu_auto") == 1;
             bool ForceGPU = Program.config.ContainsModel("503");
@@ -1156,14 +1218,17 @@ namespace GHelper
                 return false;
             else
             {
+
+                if (ReEnableGPU()) return true;
+
                 if (eco == 1)
-                    if ((GpuAuto && Plugged == PowerLineStatus.Online) || (ForceGPU && GpuMode == ASUSWmi.GPUModeStandard))
+                    if ((GpuAuto && IsPlugged()) || (ForceGPU && GpuMode == ASUSWmi.GPUModeStandard))
                     {
                         SetEcoGPU(0);
                         return true;
                     }
                 if (eco == 0)
-                    if ((GpuAuto && Plugged != PowerLineStatus.Online) || (ForceGPU && GpuMode == ASUSWmi.GPUModeEco))
+                    if ((GpuAuto && !IsPlugged()) || (ForceGPU && GpuMode == ASUSWmi.GPUModeEco))
                     {
 
                         if (HardwareMonitor.IsUsedGPU())
@@ -1179,6 +1244,20 @@ namespace GHelper
 
             return false;
 
+        }
+
+        public bool ReEnableGPU()
+        {
+            if (Screen.AllScreens.Length <= 1) return false;
+            if (Program.config.getConfig("gpu_reenable") != 1) return false;
+
+            Logger.WriteLine("Re-enabling gpu for 503 model");
+
+            Thread.Sleep(1000);
+            SetEcoGPU(1);
+            Thread.Sleep(1000);
+            SetEcoGPU(0);
+            return true;
         }
 
         private void UltimateUI(bool ultimate)
@@ -1269,7 +1348,7 @@ namespace GHelper
                 Program.wmi.DeviceSet(ASUSWmi.GPUEco, eco, "GPUEco");
 
                 if (eco == 0)
-                    HardwareMonitor.RecreateGpuTemperatureProviderWithDelay();
+                    HardwareMonitor.RecreateGpuControlWithDelay();
 
                 Program.settingsForm.BeginInvoke(delegate
                 {
